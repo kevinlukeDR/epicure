@@ -1,7 +1,6 @@
 package rest.business.representation.POJO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.teachoversea.rest.dao.Objects.Job.Profile;
 import lombok.*;
 import lombok.experimental.Wither;
 
@@ -28,6 +27,4 @@ public class AccountPOJO {
     @JsonProperty("profile_id")
     private long profile_id;
 
-    @JsonProperty("profile")
-    private Profile profile;
 }

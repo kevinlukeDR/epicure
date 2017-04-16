@@ -36,27 +36,6 @@ public class EpicureConfiguration extends Configuration {
 
     @NotEmpty
     @JsonProperty
-    private String accessKey;
-
-    @NotEmpty
-    @JsonProperty
-    private String secretKey;
-
-    @NotEmpty
-    @JsonProperty
-    private String sessionExpireTime;
-
-
-    @NotEmpty
-    @JsonProperty
-    private String publicbucketName;
-
-    @NotEmpty
-    @JsonProperty
-    private String privatebucketName;
-
-    @NotEmpty
-    @JsonProperty
     private String defaultName = "Stranger";
 
 
@@ -69,41 +48,5 @@ public class EpicureConfiguration extends Configuration {
     @JsonProperty
     private FlywayFactory flywayFactory;
 
-    @NotEmpty
-    @JsonProperty
-    private String privatevideobucketName;
 
-
-    @JsonProperty
-    private EmailYAML contactemail;
-
-    @JsonProperty
-    private EmailYAML applyconfirmemail;
-
-    @JsonProperty
-    private EmailYAML registrationemail;
-
-    @JsonProperty
-    private EmailYAML forgetpasswordemail;
-
-    @JsonProperty
-    private String jobDefaultPic;
-
-    @JsonProperty
-    private EmailYAML contactUsEmail;
-
-    @JsonProperty
-    private EmailYAML applicationEmail;
-
-    @JsonProperty
-    private String authenticationCachePolicy;
-
-    @JsonProperty
-    private String avatarDefaultPic;
-
-    @JsonProperty
-    private EmailYAML qualifiedEmail;
-
-    @JsonProperty
-    private EmailYAML unqualifiedEmail;
 }

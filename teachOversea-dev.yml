@@ -5,24 +5,7 @@ defaultName: Stranger
 #
 #uploadForRecruiter: ./src/main/resources/doc/recruiter
 
-jobDefaultPic: SchoolPictures/locations-coming-soon.jpg
-
-avatarDefaultPic: ProfilePicture/3ca45b94-d0e8-4f60-ad1c-d021531b5e78avatar.png
-
 #Caching of authentication
-authenticationCachePolicy: maximumSize=10000, expireAfterAccess=10m
-
-publicbucketName: esl-public
-
-privatebucketName: esl-private
-
-privatevideobucketName: esl-private-video
-
-sessionExpireTime: 30
-
-accessKey: AKIAJPDK3B7PDD5X34UQ
-
-secretKey: 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
 
 database:
   driverClass: com.mysql.jdbc.Driver
@@ -30,62 +13,6 @@ database:
   password: 123456
   url: jdbc:mysql://localhost/teachoversea_v2?zeroDateTimeBehavior=convertToNull
 
-contactemail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  replyto: recruiter@teachoversea.com
-  subject: Contact Email
-  template: test.html
-
-applyconfirmemail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  replyto: recruiter@teachoversea.com
-  subject: Job Application Confirm Email
-  template: applyconfirm.html
-
-registrationemail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  replyto: recruiter@teachoversea.com
-  subject: Welcome to TeachOversea!
-  template: applyconfirm.html
-
-forgetpasswordemail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  replyto: recruiter@teachoversea.com
-  subject: Reset your password
-  template: applyconfirm.html
-
-contactUsEmail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  #This is actually an account we can receive the contact email
-  replyto: awycoff@teachoversea.com
-  subject: Contact Us Message
-  template: ContactUs.html
-
-applicationEmail:
-  account: no_reply@teachoversea.com
-  password: AeS.Com@@..~
-  replyto: recruiter@teachoversea.com
-  subject: Your application has been received!
-  template: applicationEmail.html
-
-qualifiedEmail:
-  account: awycoff@teachoversea.com
-  password: DePompolo1!
-  replyto: recruiter@teachoversea.com
-  subject: Hi FNAME, congrats! We'd like to invite you to an interview.
-  template: qualifiedCandidates.html
-
-unqualifiedEmail:
-  account: awycoff@teachoversea.com
-  password: DePompolo1!
-  replyto: recruiter@teachoversea.com
-  subject: Hi FNAME, thanks for submitting your application!
-  template: unqualifiedCandidates.html
 #logging:
 #  appenders:
 #    - type: console

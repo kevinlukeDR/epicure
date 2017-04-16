@@ -2,9 +2,6 @@ package rest;
 
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
-import io.dropwizard.auth.AuthDynamicFeature;
-import io.dropwizard.auth.AuthValueFactoryProvider;
-import io.dropwizard.auth.oauth.OAuthCredentialAuthFilter;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.flyway.FlywayBundle;
 import io.dropwizard.flyway.FlywayFactory;
@@ -14,15 +11,12 @@ import io.dropwizard.setup.Environment;
 import io.stardog.starwizard.filters.LbHttpsRedirectFilter;
 import org.eclipse.jetty.servlet.FilterHolder;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
-import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
+
 import org.skife.jdbi.v2.DBI;
-import rest.auth.AccountPrinciple;
-import rest.auth.oauth2.OAuth2Authenticator;
-import rest.auth.oauth2.OAuth2Authorizor;
+
 import rest.health.TemplateHealthCheck;
 import rest.resources.AccountResource;
-import rest.resources.LinkbacResource;
-import rest.resources.ResumeResource;
+
 
 import javax.servlet.DispatcherType;
 import java.util.EnumSet;
@@ -116,42 +110,31 @@ public class EpicureApplication extends Application<EpicureConfiguration> {
         //initializer.folding(jdbi);
         //initializer.createTables();
 
-        final LinkbacResource linkbacResource = new LinkbacResource(
-                conf.getTemplate(),
-                conf.getDefaultName(),
-                jdbi
-        );
 
-
-        final S3Client s3Client = new S3Client(conf.getAccessKey(), conf.getSecretKey(), conf.getPrivatebucketName(),
-                conf.getPublicbucketName(),conf.getPrivatevideobucketName());
 
         final AccountResource accountResource = new AccountResource(jdbi);
-        final ResumeResource resumeResource = new ResumeResource(jdbi,s3Client);
 
         // Add the resource to the environment
-        env.jersey().register(linkbacResource);
         env.jersey().register(accountResource);
 
         env.jersey().register(MultiPartFeature.class);
         //Register Candidate Resource
-        env.jersey().register(resumeResource);
 
         //Request Filter
 
 
 
         // Register security component
-        env.jersey().register(new AuthDynamicFeature(
-                new OAuthCredentialAuthFilter.Builder<AccountPrinciple>()
-                        .setAuthenticator(new OAuth2Authenticator(jdbi, Integer.parseInt(conf.getSessionExpireTime())))
-                        .setAuthorizer(new OAuth2Authorizor())
-                        .setRealm("realm")
-                        .setPrefix("Bearer")
-                        .buildAuthFilter()));
-        env.jersey().register(RolesAllowedDynamicFeature.class);
-        //If you want to use @Auth to inject a custom Principal type into your resource
-        env.jersey().register(new AuthValueFactoryProvider.Binder<>(AccountPrinciple.class));
+//        env.jersey().register(new AuthDynamicFeature(
+//                new OAuthCredentialAuthFilter.Builder<AccountPrinciple>()
+//                        .setAuthenticator(new OAuth2Authenticator(jdbi, Integer.parseInt(conf.getSessionExpireTime())))
+//                        .setAuthorizer(new OAuth2Authorizor())
+//                        .setRealm("realm")
+//                        .setPrefix("Bearer")
+//                        .buildAuthFilter()));
+//        env.jersey().register(RolesAllowedDynamicFeature.class);
+//        //If you want to use @Auth to inject a custom Principal type into your resource
+//        env.jersey().register(new AuthValueFactoryProvider.Binder<>(AccountPrinciple.class));
 
 
         /*
