@@ -1,0 +1,91 @@
+<td class="recRate hidden-xs">
+        <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+        100% Match
+        </div>
+        </div>
+</td>
+                
+<td class="photo-cell hidden-xs">
+    <img src="https://s3.us-east-2.amazonaws.com/esl-public/<%= picture.path %>"  class="candidate-img-sm">
+</td>
+
+<td class="candidate-summary">
+    <a href="javascript:;" class="recruiter-candidate-title result-header" data-toggle="modal" id="viewDetailLink"><%= fname %>.<%= lname %></a>
+        <div class="favp">
+            <i class="fa fa-heart fa-lg fa-heart-1 fa-left" aria-hidden="true" data-toggle="popover" data-placement="right" data-content="Saved!"></i>
+            </div>
+
+            <div class="mt4">
+                <div class="col-sm-6 col-xs-12">
+                    <p>educationExperiences.degree</p>
+                    <p>Available after <%
+                        var d = new Date(availableDate),
+                        fragments = [
+                        d.getMonth()+1,
+                        d.getDate(),
+                        d.getFullYear()
+                        ];
+                        print(fragments.join('-'));
+                    %></p>
+                    <% if (certifications.length > 0 ) { %>
+                    <p>Hold a valid TEFL Certificate</p>
+                    <% } %>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <p>Nationality: <%= nationality %> </p>
+                    <% if(educationExperiences.length > 0) { %>
+                    <p>Has related experience </p>
+                    <% } %>
+                </div>
+            </div>
+</td>
+
+<td>
+    <div class="col-xs-12">
+        <a class="mt8" href="mailto: recruiter@teachoversea.com?Subject=Contact%20Candidate%20<%= id %>">Contact</a>
+    </div>
+
+    <div class="col-xs-12">
+        <button class="btn btn-blue mt8" data-toggle="modal" id="viewDetailButton">View</button>
+        <div class="get-resume"></div>
+    </div>
+</td>
+
+    
+
+<!-- Resume Modal -->
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.fa-heart-1').popover({
+            delay:{
+                show:500,
+                hide:100
+            }
+        });
+
+        $('.fa-heart-2').popover({
+            delay:{
+                show:500,
+                hide:100
+            }
+        });
+
+         $('.fa-heart-1').click(function(){
+            setTimeout(function () {
+            $('.popover').fadeOut('slow');
+            }, 3000);
+        });
+
+        $('.fa-heart-2').click(function(){
+            setTimeout(function () {
+            $('.popover').fadeOut('slow');
+            }, 3000);
+        });
+    });
+    
+</script>

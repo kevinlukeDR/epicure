@@ -1,0 +1,309 @@
+<div class="outer">
+	<div class="inner bg-light lter">
+	<div class="main-bar">
+		<h3>New Job Posting</h3>
+	</div>
+		<!-- <ol class="breadcrumb">
+		  <li class="active">New Job Posting</li>
+		</ol> -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<div class="box dark">
+				<header>
+					<div class="icons"><i class="fa fa-edit"></i></div>
+            		<h5>Job Details</h5>
+				</header>
+				<div class="body collapse in" aria-expanded="true">
+					<form id="job-post" class="form-horizontal" enctype="multipart/form-data" method="post" action="/">
+						<fieldset>
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group" id="position-area">
+									<label class="control-label col-sm-4" for="position">Job Title*</label>
+									<div class="col-sm-8">
+										<input class="form-control required" type="text" id="position" name="position" required />
+									</div>				
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+										<label class="control-label col-sm-4" for="city">City*</label>
+										<div class="col-sm-8">
+											<input class="form-control required" type="text" name="city"  required />
+										</div>
+									</div>
+								</div>
+						
+						
+						
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label class="control-label col-sm-4" for="jobType">Job Type*</label>
+									<div class="col-sm-8">
+										<select class="form-control required" name="jobType" required>
+											<option value="Full Time">Full Time</option>
+											<option value="Part Time">Part Time</option>
+											<option value="Online">Online</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label class="control-label col-sm-4" for="contractLen">Contract Length*</label>
+									<div class="col-sm-8">
+										<div class="input-group">
+											<input type="number" name="contractLen" class="form-control" min="0" required><span class="input-group-addon">months</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						
+						
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+								<label class="control-label col-sm-4" for="eligibleCandidates">Eligible Candidate*</label>
+								<div class="col-sm-8">
+									<select class="form-control required" name="eligibleCandidates">
+										<option value="true">Licensed Teacher</option>
+										<option value="false">Not Licensed</option>
+									</select>
+								</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label class="control-label col-sm-4">Subject*</label>
+									<div class="col-sm-8">
+										<select class="form-control required" name="subject">
+											<option value="English">English</option>
+											<option value="A-level Testing">A-level Testing</option>
+											<option value="SAT">SAT</option>
+											<option value="Business English">Business English</option>
+											<option value="Mathematics">Mathematics</option>
+											<option value="Science">Science</option>
+											<option value="History">History</option>
+											<option value="Literature">Literature</option>
+											<option value="Art">Art</option>
+											<option value="Others">Others</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label class="control-label col-sm-4">Class Size*</label>
+									<div class="col-sm-8">
+										<select class="form-control required" name="classSize" required>
+											<option value="5">Less than 5</option>
+											<option value="35">6-35</option>
+											<option value="60">36-60</option>
+											<option value="61">More than 60</option>
+									</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label class="control-label col-sm-4">Start date*</label>
+									<div class="col-sm-8">
+										<input  id="startDate" name="startDate" class="form-control date-input"  required data-date-format="yyyy-mm-dd">
+									</div>
+								</div>
+							</div>
+						
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="nativeSpeaker">Native Speaker*</label>
+								<div class="col-sm-8">
+									<select class="form-control" name="nativeSpeaker" required>
+									<option value="true">Yes</option>
+									<option value="false">Not Necessary</option>
+									</select>
+								</div>				
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+					 		<div class="form-group">
+								<label class="control-label col-sm-4">Student Level*</label>
+								<div class="col-sm-8">
+									<select class="form-control required" name="grade">
+										<optgroup label="General">
+											<option value="All Age under 18">All Age under 18</option>
+											<option value="Not Specified">Not Specified</option>
+										</optgroup>
+										<option value="0-6">Pre-K+ (Age 0-5)</option>
+										<option value="7-12">Elementary School (Age 6-12)</option>
+										<option value="13-15">Middle School (Age 13-15)</option>
+										<option value="16-18">High School (Age 16 - 18)</option>
+										<option value="Higher">Higher-Ed</option>
+										<option value="Professional">Business Professional</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-xs-12">						
+							<div class="form-group">
+								<label class="control-label col-sm-4" for="education">Education Required*</label>
+								<div class="col-sm-8">
+									<select class="form-control" required name="education">
+										<option value="Bachelor Degree">Bachelor Degree</option>
+										<option value="Master Degree">Master Degree</option>
+										<option value="Doctor or Above">Doctor or Above</option>
+									</select>
+								</div>				
+							</div>
+						</div>
+
+						
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+									<label class="control-label col-sm-4" for="salaryMin">Salary (Min)*</label>
+									<div class="col-sm-8 input-group">
+										<input type="number" name="salaryMin" class="form-control" min="0" required>
+										<span class="input-group-addon">RMB/Month</span>
+									</div>				
+								</div>
+						</div>
+
+						<div class="col-sm-6 col-xs-12">
+							<div class="form-group">
+									<label class="control-label col-sm-4" for="salaryMax">Salary (Max)*</label>
+									<div class="col-sm-8 input-group">
+										<input type="number" name="salaryMax" class="form-control" min="0" required>
+										<span class="input-group-addon">RMB/Month</span>
+									</div>				
+							</div>
+						</div>
+						
+						<div class="form-group">
+								<label class="control-label col-sm-4" for="experience">Minimal Teaching Experience*</label>
+								<div class="col-sm-8">
+									<select class="form-control" required name="experience">
+										<option value="0">None</option>
+										<option value="1">Less than 1 Year</option>
+										<option value="2">1 to 2 years</option>
+										<option value="3">3 to 5 years</option>
+										<option value="5">More than 5 years</option>
+									</select>
+								</div>				
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="salaryMessage">Additional infomation about salary</label>
+							<div class="col-sm-8">
+								<textarea name="salaryMessage" class="form-control" id="salaryMessage" data-limit="255" data-text="#chars3"></textarea>
+								<span id="chars3">255</span> characters remaining
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="certificates">Related Certificates (if any)</label>
+							<div class="col-sm-8">
+								<input type="text" name="certificates" class="form-control">
+							</div>
+						</div>
+						
+
+						
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<div class="checkbox">
+		                                <label>
+		                                    <input class="uniform" type="checkbox" value="true" name="lunch"> Lunch Included
+		                                </label>
+		                            </div>	
+								</div>
+							</div>
+							
+							<div class="col-sm-6 col-xs-12">
+								<div class="form-group">
+									<div class="checkbox">
+		                                <label>
+		                                    <input class="uniform" type="checkbox" value="true" name="chinese"> Chinese Class Included
+		                                </label>
+		                            </div>
+								</div>
+							</div>
+						
+							<div class="form-group">
+								<label class="control-label col-lg-4 col-md-12" for="additional">Additional Information (Other requirement, airfare, accommodation, winter/summer vacation, annual leave, etc. ) </label>
+								<div class="col-lg-8 col-md-12">
+									<textarea id="additional" class="form-control" name="additional" data-limit="1000" data-text="#chars2" rows="5">No Specific</textarea>
+									<span id="chars2">1000</span> characters remaining
+								</div>				
+							</div>
+
+						</fieldset>
+
+
+						<header>
+							<div class="icons"><i class="fa fa-edit"></i></div>
+		            		<h5>School Infomation</h5>
+						</header>
+
+						<!-- School Information -->
+						<fieldset class="mt10">
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="schoolName">School or Company Name</label>
+							<div class="col-sm-8">
+								<input class="form-control" type="text" name="schoolName" />
+							</div>				
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="schoolType">Institute Type*</label>
+							<div class="col-sm-8">
+								<select class="form-control" name="schoolType" required>
+									<option value="Public School">Public School</option>
+									<option value="Private School">Private School</option>
+									<option value="Private Language Insitute">Private Language Insitute</option>
+									<option value="University">University</option>
+									<option value="International School">International School</option>
+								</select>
+							</div>				
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="aboutSchool">Description</label>
+							<div class="col-sm-8">
+								<textarea id="aboutSchool" class="form-control" name="aboutSchool" data-limit="5000" data-text="#chars"></textarea>
+								<span id="chars">5000</span> characters remaining
+							</div>				
+						</div>
+
+						 <div class="form-group">
+							<label class="control-label col-sm-4" for="uploadPic">Upload Job Related Images(If any) :</label>
+							<input type="file" name="schoolPic" id="uploadPic" multiple="multiple">
+						</div>
+						
+						</fieldset>
+						<button class="btn btn-default" id="saveBtn">Save as draft</button>
+						<button class="btn btn-blue" id="publishBtn">Publish Now</button>
+					</form>
+					<div class="alert alert-error hidden" id="job-error"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+
+			<div class="alert alert-info">
+				Please enter estimated salary. Salary is negotiable.
+			</div>
+			<div class="alert alert-info">
+				A detailed benefits will make your job more attractive to excellent candidates.
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+

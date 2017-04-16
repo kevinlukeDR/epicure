@@ -1,0 +1,38 @@
+<%
+if(status == 'Draft'){ %>
+<td><a href="#recruiter/postJob/<%= id %>"><%= position %></a></td>
+<% } else if (status == 'Published') {%>
+<td><a href="#recruiter/jobs/<%= id %>"><%= position %></a></td>
+<% } else if (status == 'Closed') { %>
+<td><%= position %></td>
+<% } %>
+
+<td><% var d = new Date(postDate),
+	fragments = [d.getMonth()+1,
+	d.getDate(),
+	d.getFullYear()];
+	print(fragments.join('/'));
+	%></td>
+<td><a href="#recruiter/Jobduplicate/<%= id %>">duplicate</a></td>
+<td class="recruiter-job-status"><%= status %></td>
+
+
+<%
+if(status == 'Published'){ %>
+<td class="view-candidate"><a href="#recruiter/postjob/<%= id %>/candidate">View Candidates</a></td>
+<% } else {%>
+<td class="view-candidate">N/A</td>
+<% } %>
+
+
+
+<%
+if(status == 'Draft'){ %>
+	<td><a href="#recruiter/Jobedit/<%= id %>">edit</a></td>
+<% } else if (status == 'Published') {%>
+<td><a href="#" id="discardJob">close</a></td>
+<% } else if (status == 'Closed') { %>
+<td><a href="#recruiter/Jobduplicate/<%= id %>">duplicate</a></td>
+<% } %>
+
+

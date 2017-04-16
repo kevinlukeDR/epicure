@@ -1,0 +1,12 @@
+<td class="table-position"><%= position %></td>
+<td><% var d = new Date(postDate),
+fragments = [d.getMonth()+1,d.getDate(),d.getFullYear()];
+print(fragments.join('-')); %></td>
+<td>
+	<div class="btn-group" role="group" aria-label="...">
+		<button type="button" class="btn btn-blue" id="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT</button>
+		<button type="button" class="btn btn-default" id="delete"><i class="fa fa-times" aria-hidden="true"></i> DELETE</button>
+	</div>
+	<!-- <span class="curselink"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT</span><br>
+	<span class="curselink" id="delete"><i class="fa fa-times" aria-hidden="true"></i> DELETE</span -->
+</td>

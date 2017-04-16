@@ -1,0 +1,517 @@
+<!-- <div class="container"> -->
+<div class="row">
+	<div class="col-lg-12">
+			<!-- multistep form-->
+		<form id="job-post" class="form-horizontal" enctype="multipart/form-data" method="post" action="/">
+			<ul id="progressbar">
+				<li class="active">Job Details*</li>
+				<li>Working Environment</li>
+				<li>Qualification*</li>
+				<li>Benefits</li>
+			</ul>
+
+			<!--********* fieldsets ********-->
+
+			<!--********* Job details ******-->
+			<fieldset>
+				<h4 class="fs-title">Job Details*</h4>
+				<!-- <p class="red-text">All the fields are required.</p> -->
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="position">Job Title*</label>
+							<div class="col-sm-8">
+								<input class="form-control required" type="text" name="position" required />
+							</div>				
+						</div>
+						
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+								<label class="control-label col-sm-4" for="city">City*</label>
+								<div class="col-sm-8">
+									<input class="form-control required" type="text" name="city"  required />
+								</div>
+							</div>
+						</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-4" for="jobType">Job Type*</label>
+							<div class="col-sm-8">
+								<select class="form-control required" name="jobType">
+									<option value="Full Time">Full Time</option>
+									<option value="Part Time">Part Time</option>
+									<option value="Online">Online</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-5" for="contractLen">Contract Length*</label>
+							<div class="col-sm-7">
+								<div class="input-group">
+									<input type="number" name="contractLen" class="form-control"><span class="input-group-addon">months</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+						<label class="control-label col-sm-4" for="">Eligible Candidate*</label>
+						<div class="col-sm-8">
+							<select class="form-control required" name="eligibleCandidates">
+								<option value="true">Licensed Teacher</option>
+								<option value="false">Not Licensed</option>
+							</select>
+						</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-4">Subject*</label>
+							<div class="col-sm-8">
+								<select class="form-control required" name="subject">
+									<option value="English">English</option>
+									<option value="A-level Testing">A-level Testing</option>
+									<option value="SAT">SAT</option>
+									<option value="Business English">Business English</option>
+									<option value="Mathematics">Mathematics</option>
+									<option value="Science">Science</option>
+									<option value="History">History</option>
+									<option value="Literature">Literature</option>
+									<option value="Art">Art</option>
+									<option value="Others">Others</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-4">Class Size*</label>
+							<div class="col-sm-8">
+								<select class="form-control required" name="classSize" required>
+									<option value="10">Less Than 10</option>
+									<option value="35">11-35</option>
+									<option value="50">36-50</option>
+									<option value="51">More than 50</option>
+							</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-4">Start date*</label>
+							<div class="col-sm-8">
+								<input  id="startDate" name="startDate" class="form-control date-input"  required data-date-format="yyyy-mm-dd">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+		 		<div class="form-group">
+					<label class="control-label col-sm-4">Student Level*</label>
+					<div class="col-sm-8">
+						<select class="form-control required" name="grade">
+							<optgroup label="General">
+								<option value="All Age under 18">All Age under 18</option>
+								<option value="Not Specified">Not Specified</option>
+							</optgroup>
+							<option value="0-6">Pre-K+ (Age 0-5)</option>
+							<option value="7-12">Elementary School (Age 6-12)</option>
+							<option value="13-15">Middle School (Age 13-15)</option>
+							<option value="16-18">High School (Age 16 - 18)</option>
+							<option value="Higher">Higher-Ed</option>
+							<option value="Professional">Business Professional</option>
+						</select>
+					</div>
+				</div>
+
+				<button type="button" name="next" class="next btn btn-blue" value="Next">Next</button>
+				<!-- <button type="button" id="saveBtn" class="submit btn btn-default next" value="Submit" form="#job-post">Save as draft</button> -->
+				<!-- <button type="button" class="btn btn-blue next action-button" name="next" value="Next">Next </button> -->
+			</fieldset>
+			<!--********* Working Enviroment ******-->
+			<fieldset>
+				<h4 class="fs-title">Working Environment</h4>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="schoolName">School or Company Name*</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="schoolName" required />
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="schoolType">Institute Type*</label>
+					<div class="col-sm-8">
+						<select class="form-control" name="schoolType" required>
+							<option value="Public School">Public School</option>
+							<option value="Private School">Private School</option>
+							<option value="Private Language Insitute">Private Language Insitute</option>
+							<option value="University">University</option>
+							<option value="International School">International School</option>
+						</select>
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="aboutSchool">Description*</label>
+					<div class="col-sm-8">
+						<textarea id="aboutSchool" class="form-control" name="aboutSchool" required></textarea>
+						<span id="chars">5000</span> characters remaining
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="uploadPic">Upload Job Related Images(If any) :</label>
+					<input type="file" name="schoolPic" id="uploadPic" multiple="multiple">
+				</div>
+				<button type="button" name="previous" class="btn btn-blue previous action-button" value="Previous">Previous</button>
+
+				<button type="button" name="next" class="next btn btn-blue" value="Next"> Next</button>
+
+			</fieldset>
+
+
+			<!--********* Qualifications ******-->
+			<fieldset>
+				<h4 class="fs-title">Qualifications*</h4>
+				<!-- <p class="red-text">All the fields are required.</p> -->
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="nativeSpeaker">Native Speaker*</label>
+					<div class="col-sm-8">
+						<select class="form-control" name="nativeSpeaker" required>
+						<option value="true">Yes</option>
+						<option value="false">Not Necessary</option>
+						</select>
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="certificates">Required Certificates*</label>
+					<div class="col-sm-8">
+						<input type="text" name="certificates" class="form-control" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="education">Education Required*</label>
+					<div class="col-sm-8">
+						<select class="form-control" required name="education">
+							<option value="Bachelor Degree">Bachelor Degree</option>
+							<option value="Master Degree">Master Degree</option>
+							<option value="Doctor or Above">Doctor or Above</option>
+						</select>
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="experience">Minimal Teaching Experience*</label>
+					<div class="col-sm-8">
+						<select class="form-control" required name="experience">
+							<option value="0">None</option>
+							<option value="1">Less than 1 Year</option>
+							<option value="2">1 to 2 years</option>
+							<option value="3">3 to 5 years</option>
+							<option value="5">More than 5 years</option>
+						</select>
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="additional">Additional Requirement*</label>
+					<div class="col-sm-8">
+						<textarea  id="additional" class="form-control" name="additional">No Specific</textarea>
+						<span id="chars2">1000</span> characters remaining
+					</div>				
+				</div>
+
+				<button type="button" name="previous" class="btn btn-blue previous action-button" value="Previous">Previous</button>
+
+				<button type="button" name="next" class="next btn btn-blue" value="Next"> Next</button>
+
+			</fieldset>
+			
+			<!-- ********Benefits *********-->
+
+			<fieldset>
+				<h4 class="fs-title">Benefits</h4>
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-5" for="salaryMin">Salary (Min)</label>
+							<div class="col-sm-7 input-group">
+								<input type="number" name="salaryMin" class="form-control">
+								<span class="input-group-addon">RMB/Month</span>
+							</div>				
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-5" for="salaryMax">Salary (Max)</label>
+							<div class="col-sm-7 input-group">
+								<input type="number" name="salaryMax" class="form-control">
+								<span class="input-group-addon">RMB/Month</span>
+							</div>				
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-5" for="lunch">Lunch</label>
+							<div class="col-sm-7">
+								<select class="form-control" name="lunch">
+									<option value="false">Not Included/TBD</option>
+									<option value="true">Included</option>
+									
+								</select>
+							</div>				
+						</div>
+					</div>
+					
+					<div class="col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-5" for="chinese">Chinese Class</label>
+							<div class="col-sm-7">
+								<select class="form-control" name="chinese">
+									<option value="false">Not Included/TBD</option>
+									<option value="true">Included</option>
+								</select>
+							</div>				
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="airfare">Airfare</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="airfare" />
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="accommodation">Accommodation:</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="accommodation" />
+					</div>				
+				</div>
+
+				
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="weeklyRestDay">Weekly Rest Day</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="weeklyRestDay" />
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="vacation">Winter/Summer Vacation</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="vacation" />
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="annualLeave">Annual Leave</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="annualLeave" />
+					</div>				
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="bonus">Bonus for Continuing Contract</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" name="bonus" />
+					</div>				
+				</div>
+
+				<button type="button" name="previous" class="previous btn btn-blue" value="Previous">Previous</button>
+				<button type="button" id="postJobBtn" class="submit btn btn-pink next" value="Submit" form="#job-post">Save and Preview</button>
+			</fieldset>
+
+			
+		</form>
+	</div>
+	
+
+</div>
+	
+<!-- </div> -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	var current_fs, next_fs, previous_fs; //fieldsets
+	var left, opacity, scale; //fieldset properties which we will animate
+	var animating; //flag to prevent quick multi-click glitches
+
+	$(".next").click(function(){
+		var form = $('#job-post');
+		form.validate({
+			errorElement: 'span',
+			errorClass: 'help-block',
+			highlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').addClass("has-error");
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').removeClass("has-error");
+			},
+			rules: {
+				position:{
+					required: true,
+					maxlength: 65
+				},
+				city:{
+					required: true,
+					minlength: 3,
+				},
+				jobType:{
+					required: true,
+				},
+				contractLen:{
+					required: true,
+				},
+				eligibleCandidates:{
+					required:true,
+				},
+				subject:{
+					required:true,
+				},
+				classSize:{
+					required:true,
+				},
+				startDate:{
+					required: true,
+				},
+				grade:{
+					required:true
+				},
+				aboutSchool: {
+					maxlength:5000
+				},
+				additonal:{
+					maxlength:1000
+				}
+			},
+			messages:{
+				position:{
+					required: 'Title is required.'
+				},
+				city:{
+					required:'Location is required.',
+					minlength: 'Please enter the full name of the city',
+				},
+				jobType:{
+					required:'Job type is required.',
+				},
+				contractLen:{
+					required: 'Contract Length is required.',
+				},
+
+				// eligibleCandidates:{
+				// 	required:true,
+				// },
+				// subject:{
+				// 	required:true,
+				// },
+				// classSize:{
+				// 	required:true,
+				// },
+				startDate:{
+					required: 'Please select an estimate start date',
+				}
+			}
+		});
+
+	if (form.valid() === true) {
+		if(animating) return false;
+		animating = true;
+		
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next();
+		
+		//activate next step on progressbar using the index of next_fs
+		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+		
+		//show the next fieldset
+		next_fs.show(); 
+		//hide the current fieldset with style
+		current_fs.animate({opacity: 0}, {
+			step: function(now, mx) {
+				//as the opacity of current_fs reduces to 0 - stored in "now"
+				//1. scale current_fs down to 80%
+				scale = 1 - (1 - now) * 0.2;
+				//2. bring next_fs from the right(50%)
+				left = (now * 50)+"%";
+				//3. increase opacity of next_fs to 1 as it moves in
+				opacity = 1 - now;
+				current_fs.css({'transform': 'scale('+scale+')'});
+				next_fs.css({'left': left, 'opacity': opacity});
+			}, 
+			duration: 800, 
+			complete: function(){
+				current_fs.hide();
+				animating = false;
+			}, 
+			//this comes from the custom easing plugin
+			easing: 'easeInOutBack'
+		});
+	// });
+	}
+	});
+	
+
+	$(".previous").click(function(){
+		if(animating) return false;
+		animating = true;
+		
+		current_fs = $(this).parent();
+		previous_fs = $(this).parent().prev();
+		
+		//de-activate current step on progressbar
+		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+		
+		//show the previous fieldset
+		previous_fs.show(); 
+		//hide the current fieldset with style
+		current_fs.animate({opacity: 0}, {
+			step: function(now, mx) {
+				//as the opacity of current_fs reduces to 0 - stored in "now"
+				//1. scale previous_fs from 80% to 100%
+				scale = 0.8 + (1 - now) * 0.2;
+				//2. take current_fs to the right(50%) - from 0%
+				left = ((1-now) * 50)+"%";
+				//3. increase opacity of previous_fs to 1 as it moves in
+				opacity = 1 - now;
+				current_fs.css({'left': left});
+				previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+			}, 
+			duration: 800, 
+			complete: function(){
+				current_fs.hide();
+				animating = false;
+			}, 
+			//this comes from the custom easing plugin
+			easing: 'easeInOutBack'
+		});
+	});
+});
+
+</script>

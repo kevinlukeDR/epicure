@@ -1,0 +1,77 @@
+<div class="bbm-modal__topbar">
+    <h3 class="bbm-modal__title pr-name text-center"><%= fname %>.<%= lname %></h3>
+    <div class="favp favp-modal">
+        <i class="fa fa-heart fa-lg fa-modal" aria-hidden="true" data-toggle="popover" data-placement="right" data-content="Saved!"></i>
+    </div>
+</div>
+
+<div class="bbm-modal__section">
+    <div class="col-sm-6 col-xs-12">
+        <p><%= gender %></p>
+        <p>Earlist Available: <% 
+                var d = new Date(availableDate),
+                    fragments = [
+                    d.getMonth()+1,
+                    d.getDate(),
+                    d.getFullYear()
+                    ];
+                    print(fragments.join('-'));
+        %></p>
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+        <p>Age  <%  
+                var n = new Date();
+                var age = n.getFullYear() - birth;
+                    print(age);
+        %></p>
+        <p>From <%= nationality %></p>
+    </div>
+    
+    <div style="clear: both;">
+        <dl>
+            <dt>Education</dt>
+            <dd>
+            <% for (i=0; i< educationExperiences.length; i++) { %>
+                <h4><%= educationExperiences[i].school %>
+                <small class="resume-date">
+                <% var d = new Date(educationExperiences[i].toDate).getFullYear(); print(d) %></small>
+                </h4>
+                <p class="text-muted"><strong>Major: </strong><%= educationExperiences[i].field %><br/>
+                <strong>Degree: </strong><%= educationExperiences[i].degree %></p> 
+           
+            <% } %> 
+            </dd> 
+        </dl>
+
+        <dl>
+        <dt>Related Experience</dt>
+        <dd>
+        <% for (i=0; i< relaventExperiences.length; i++) { %>
+                <h4><%= relaventExperiences[i].role %> at <small class="text-muted"><%= relaventExperiences[i].company %></small>
+                <small class="resume-date">
+                    <% var d = new Date(relaventExperiences[i].fromDate).getFullYear(); print(d); %>  – <% var d = new Date(relaventExperiences[i].toDate).getFullYear(); print(d); %>
+                </small>
+                </h4>       
+                <p class="text-muted"><%= relaventExperiences[i].responsibility %></p>              
+          
+        <% } %>
+        </dd>
+        </dl>
+
+        <dl>
+        <dt>Certificates</dt>
+        <dd>
+            <% for (i=0; i< certifications.length; i++) { %>
+            <p><strong><%= certifications[i].type %>,</strong> issued by <%= certifications[i].issuingBody %> on 
+            <% var d = new Date(educationExperiences[i].toDate).getFullYear(); print(d) %> </p>
+            
+            <% } %>
+        </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+</div>

@@ -1,0 +1,59 @@
+
+<div class="row certification">
+	<div class="col-xs-3" id="type">
+	 <h5><%= type %></h5>
+	</div>
+
+	<div class="col-xs-3" id="issuingBody">
+	 <p class="text-muted">Issued by <%= issuingBody %></p>
+	</div>
+
+	<div class="col-xs-4" id="issueDate">
+	 <p class="text-muted"><%= issueDate %></p>
+	</div>
+	<div class="col-xs-1">
+	 <span class="glyphicon glyphicon-edit" aria-hidden="true" id="edit-Ct"></span>
+	</div>
+	<div class="col-xs-1">
+	 <span class="glyphicon glyphicon-remove" aria-hidden="true" id="remove-Ct"></span>
+	</div>
+</div>
+<div class="app"></div>	
+
+
+<!-- 
+<script type="text/template" id="certification-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Certification</h3>
+    </div>
+    <div class="bbm-modal__section">
+    <form id="edit-certification-form">
+		<div class="col-sm-6 col-xs-12"> 
+			<div class="form-group">
+				<label>Certificate Type</label>
+				<input type="text" name="type" class="form-control" value="<%= type %>" id="type" required>
+			</div>
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<div class="form-group">
+				<label for="issueDate">Issue Date</label>
+				<input type="date" name="issueDate" class="form-control" value="<%= issueDate %>" id="issueDate" required>
+			</div>
+		</div>
+
+		<div class="col-sm12 col-xs-12">
+			<div class="form-group">
+				<label for="issueDate">Issue Body</label>
+				<input type="text" name="issuingBody" class="form-control" value="<%= issuingBody %>" id="issuingBody" required>
+			</div>
+		</div>
+	</form>
+
+	
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+  </script> -->

@@ -1,0 +1,342 @@
+// For importing colors and fonts
+$blue: #2186C4;
+$blue-hover: darken($blue,10%);
+$pink: #FF7F66;
+$pink-hover: darken($pink,10%);
+
+$grey: #F2F2F2;
+$white: #FFF6E5;
+@fa-font-path:   "../../fonts";
+@font-face {
+  font-family: "Lato";
+  src: url(../../fonts/Lato-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+	font-family: "Open Sans";
+	src: url(../../fonts/SourceSansPro-Regular.ttf) format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+$font: 'Open Sans', sans-serif;
+
+@font-face{
+  font-family: "Sans Bold";
+  src: url(../../fonts/SourceSansPro-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+$font-bold: 'Sans Bold', sans-serif;
+body,html{
+  height: 100%;
+  padding-top: 25px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+h4{
+  overflow: hidden;
+}
+body>div{height:100%;}
+// body{
+// 	font-family: $font;
+// 	font-size: 15px;
+//   background-color: #f1f3f4;
+// }
+
+.mt-user{
+    margin-top: 50px !important;
+  }
+
+@media(min-width: 768px)and(max-width: 991px){
+  .mt-user{
+    margin-top: 100px !important;
+  }
+}
+#content{
+  min-height: 85%;
+}
+.pink-text{
+  color:$pink;
+}
+.blue-text{
+  color:$blue;
+}
+.red-text{
+  color: red;
+}
+.m2{
+  margin:2px;
+}
+.mt4{
+  margin-top: 4px;
+}
+.mb4{
+  margin-bottom: 4px;
+}
+.mt8{
+  margin-top: 8px;
+}
+.mb8{
+  margin-bottom: 8px;
+}
+.mb10{
+  margin-bottom: 10px;
+}
+
+.ml8{
+  margin-left: 8px;
+}
+.mt10{
+  margin-top: 10px;
+}
+.mr10{
+ margin-right: 10px;
+}
+.mr20{
+  margin-right: 20px;
+}
+
+.mt20{
+  margin-top: 20px;
+}
+.mt40{
+  margin-top:40px;
+}
+.mt50{
+  margin-top: 50px;
+}
+.floatl{
+  float: left;
+}
+.floatr{
+  float: right;
+}
+.w80{
+  max-width: 80%;
+}
+.bborder{
+  border-bottom: 1px solid #ddd;
+}
+.curselink{
+  cursor: pointer
+}
+h1,h2,h3,h4{
+  font-weight: bold;
+}
+h1{
+  text-transform: uppercase;
+}
+
+h2, h3, h4,h5{
+  font-family: $font-bold;
+}
+h5{
+  font-size: 1.2em;
+}
+
+p.large-text{
+  font-size: 1.2em;
+}
+h2.section-heading{
+  margin-bottom: 30px;
+}
+.text-center{
+  text-align: center;
+}
+//pink button
+a.pink, a.pink-link{
+  text-decoration: none;
+  color: $pink;
+  :hover{
+    color: $pink-hover; 
+  }
+}
+.btn-pink {
+  font-family: Arial;
+  color: #FFF6E5;
+  //font-size: 16px;
+  background: $pink;
+  //padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+//pink inverse button
+
+.btn-pink-inverse {
+  font-family: Arial;
+  color: $pink;
+  background: $white;
+  text-decoration: none;
+  border: solid 2px $pink;
+  &:hover{
+    color: $pink-hover;
+  }
+}
+
+//blue button
+a.blue, a.blue-link{
+  text-decoration: none;
+  color: $blue;
+  :hover{
+    color: $blue-hover; 
+  }
+}
+.btn-blue {
+  font-family: Arial;
+  color: white;
+  background: $blue;
+  text-decoration: none;
+}
+//favorite button
+
+.fav-button{
+  color: $pink;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px
+}
+
+.fav-button:hover{
+  cursor: pointer;
+  background-color: #EEE;
+}
+
+.unfav{
+  color: #eee !important;
+}
+/***** Lists *****/
+
+ul{
+  list-style: none;
+}
+
+li.position-list{
+  position: relative;
+}
+.searchresult{
+  border-bottom: 1px solid #ddd;
+}
+.search-result-summary>p>i.fa,.search-result-summary>div>p>i.fa, {
+  color: $pink;
+  width:25px;
+}
+
+// #applyButton{
+//   position: absolute; 
+//   right: 50px;
+//   top: 10px;
+// }
+.btn-full{
+  width: 100%
+}
+.btn-pink:focus, .btn-pink.focus{
+  color: $white;
+  outline-color: none;
+}
+
+.btn-pink:hover {
+  background: $pink-hover;
+  text-decoration: none;
+  color: $white;
+}
+
+.btn-blue:focus, .btn-blue.focus{
+  color: white;
+  outline-color: none;
+}
+.btn-blue:hover{
+  background: $blue-hover;
+  text-decoration: none;
+  color: white;
+}
+.black-text{
+  color: #333
+}
+
+.white-text{
+  color: $white;
+}
+
+.blue-text{
+  color:$blue;
+}
+
+.text-muted{
+  font-size: 1em;
+}
+
+div.content-panel{
+  background: white;
+  border: 0 none;
+  border-radius: 2px;
+  box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+  padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-bottom: 15px;
+}
+
+
+div.white-panel{
+  background-color: #fff;
+  border: 1px solid #e0e2e3;
+  padding: 15px;
+}
+
+@media (min-width: 768px){
+  .tab-content{
+    margin:auto;
+    padding: 15px;
+    margin: auto;
+    max-width: 500px;
+  }
+}
+@media(max-width: 767px){
+  div.content-panel{
+    padding: 12px;
+  }
+  .container{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+// #register-form>div, #recruiter-register-form>div, form>div{
+//   margin: 8px 0px;
+// }
+
+// label{
+//   width: 150px;
+// }
+
+// .alert{
+//   clear:both;
+//   font-size: 11px;
+//   max-width: 350px;
+//   margin:auto;
+//   display: none;
+//   padding: 0px;
+// }
+
+// Tables
+
+ thead{
+  color: $pink !important;
+}
+th{
+  max-width: 150px;
+}
+
+div.datepicker {
+  max-height: 300px !important;
+}

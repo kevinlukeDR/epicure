@@ -1,0 +1,179 @@
+<div class="container mt20">
+	<div class="row">
+	<div class="tab-content content-panel">
+	 <h2 class="section-heading">Sign Up</h2> 
+		<form id="recruiter-register-form" enctype="multipart/form-data">
+
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+					<input class="form-control" type="text" name="fname" placeholder="First Name*" required />
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+					<input class="form-control" type="text" name="lname" placeholder="Last Name*" required />
+				</div>
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group email has-feedback">
+					<input id="inputEmail" class="form-control" type="email" name="email" placeholder="Email Address*" required />
+				</div>
+			</div>
+
+			<div id="feedback" class="alert"></div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+				<input id="inputPassword" class="form-control" type="password" name="password" placeholder="Enter Your Password*" required autocomplete="off" />
+				</div>
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+				<input id="confirmPassword" type="password" name="confirmPassword" class="form-control" placeholder="Confirm Your Password*" required autocomplete="off" />
+				</div>
+			</div>
+
+			<!-- <div id="feedback2" class="alert"></div> -->
+
+			<div class="col-xs-6">
+				<div class="form-group">
+				<select id="countryCode" class="form-control" required>
+					<option value="" disabled selected>Country Code</option>
+					<option value="+86">(+86)China</option>
+					<option value="+1">(+1)USA</option>
+					<option value="+81">(+81)Japan</option>
+					<option value="+886">(+886)Taiwan</option>
+					<option value="+852">(+852)HongKong</option>
+					<option value="+">Other</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="col-xs-6">
+				<div class="form-group">
+				<input type="text" id="phoneNumber" name="phone" class="form-control" placeholder="Phone Number*" required>
+				</div>
+			</div>
+
+			<div class="col-xs-12 checkbox">
+				<label class="text-muted"><input type="checkbox" id="notSubmit">Same as Login Email</label>
+			</div>
+			<div class="col-xs-12">
+				<div class="form-group">
+					<input type="email" name="contactEmail" id="contactEmail" class="form-control" placeholder="Contact Email*" required>
+				</div>
+			</div>
+			
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<select name="title" required class="form-control">
+						<option value="" disabled>Your Title*</option>
+						<option value="Admin">Admin</option>
+						<option value="HR/Talent Professional">HR/Talent Professional</option>
+						<option value="Manager/ Head of Department">Manager/ Head of Department</option>
+						<option value="VP/Director">VP/Director</option>
+						<option value="C Level">C Level</option>
+						<option value="Business Owner">Business Owner</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<input type="text" name="companyName" class="form-control" placeholder="Company Name*" required>
+				</div>
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+				<input type="text" name="companyAddress" class="form-control" placeholder="Company Address*" required>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+					<select name="companySize" class="form-control" required>
+						<option value="" disabled selected>Company Size*</option>
+						<option value="5">0-5</option>
+						<option value="10">6-10</option>
+						<option value="20">11-20</option>
+						<option value="50">20-50</option>
+						<option value="51">More than 50</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+				<input class="form-control" type="year" name="foundTime" placeholder="Founded Year*" required>
+				</div>
+			</div>
+
+			<div class="clearfix visible-xs-block"></div>
+			<div class="col-xs-12">
+				<div class="form-group">
+				<!-- <div class="input-group"> -->
+					<input class="form-control" type="url" name="companyWebsite" placeholder="Company Website" value="http://">
+				<!-- </div> -->
+				</div>
+				
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<textarea rows="4" name="description" class="form-control" form="recruiter-register-form" placeholder="Company Introduction*" required></textarea>
+					<span id="chars">5000</span> characters remaining
+
+				</div>
+			</div>
+
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="uploadLogo">Upload Your Company Logo</label>
+					<input id="uploadLogo" type="file" name="companyLogo" class="form-control">
+				</div>
+			</div>
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="uploadPic">Upload Your Company Pictures</label>
+					<input id="uploadPic" type="file" name="companyPic" class="form-control" multiple="multiple">
+				</div>
+			</div>
+
+			<p class="text-muted">By creating an account, you agree to our <a href="#" data-toggle="modal" data-target="#term-of-service">Terms of Service</a></p>
+
+			<button id="registerButton" form="recruiter-register-form" type="submit" class="btn btn-lg btn-blue" >Register</button>
+
+
+		</form>
+
+	</div>
+	</div>
+</div>
+
+<!-- Term of Service -->
+<div class="modal fade" id="term-of-service" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Term of Service</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

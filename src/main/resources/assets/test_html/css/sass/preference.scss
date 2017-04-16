@@ -1,0 +1,54 @@
+@import 'preset';
+
+.preference-list{
+	list-style-type: none;
+	overflow: hidden;
+
+}
+
+li.preference-list-item{
+	float: left;
+	margin: 0 4px 8px 0;
+}
+
+.pills .btn-add{
+	color: $blue;
+	outline:0;
+	margin-left: 8px;
+	background-color: transparent;
+}
+li.add-textbox{
+	width: 150px;
+}
+.checked-pill, .unchecked-pill{
+	height: 32px;
+	
+	border-radius: 32px;
+	line-height: 32px;
+	padding: 0 12px;
+	border: 0;
+}
+.checked-pill{
+	background-color: $blue;
+	color: #fff;
+}
+.unchecked-pill{
+	background-color: #fff;
+	color: $blue;
+	border: 1px solid $blue;
+}
+.btn-pill{
+	background: 0 0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.45rem;
+    line-height: 1.375;
+}
+
+input.preference-input{
+	border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid $blue;
+}

@@ -1,0 +1,38 @@
+<div class="container mt20">
+<div class="content-panel tab-content">
+	<h2 class="section-heading text-center">Unsubscribe</h2>
+	<div id="unsubscribe-area">
+		<form enctype="multipart/form-data" id="unsubscribe-form">
+			<div class="form-group">
+				<input type="email" name="email" required class="form-control" placeholder="Email Address" id="email">
+			</div>
+			
+			<button class="btn btn-default btn-blue mt8" id="unsubscribeBtn" style="width: 100%">Unsubscribe</button>
+		</form>
+	</div>
+	
+	<form id="reason" class="hidden" enctype="multipart/form-data">
+		<p>We are sorry to see you go! Please let us know the reason why you are leaving us...</p>
+		
+		<label><input type="radio" name="reason" value="tooManyEmail">I am receiving too many emails.</label>
+		
+		<label><input type="radio" name="reason" value="service">This service is not what I thought it was.</label>
+		
+		<label><input type="radio" name="reason" value="foundJob">I found a job someplace else.</label>
+
+		<textarea rows="2" name="text" class="form-control unsubscribe-area foundJob hidden" placeholder="Please specify" required></textarea>
+
+		<label><input type="radio" name="reason" value="website">I found the website to be confusing/hard to use.</label>
+
+		<textarea rows="3" name="text" class="form-control unsubscribe-area website hidden" placeholder="Please specify" required></textarea>
+		<br>
+		<label><input type="radio" name="reason" value="other">Other:</label>
+		<textarea rows="3" name="text" class="form-control unsubscribe-area other hidden " placeholder="Please specify" required></textarea>
+
+		<div id="submitArea">
+			<button class="btn btn-default btn-blue mt8" id="investBtn" style="width: 100%">Submit</button>
+		</div>
+			
+	</form>
+</div>
+</div>

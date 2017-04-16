@@ -1,0 +1,255 @@
+
+.modal a {
+    color: white;
+}
+
+.recording-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-button {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.video-container {
+    position: relative;
+}
+
+.current-video {
+    background: gray;
+}
+
+a.start-recording {
+    text-decoration: none;
+    font-size: 20px;
+    position: absolute;
+    left: 70px;
+    top: 23px;
+    width: 230px;
+    height: 230px;
+    border: 8px solid white;
+    border-radius: 50%;
+    color: white;
+    z-index: 1;
+    display: block;
+    /*padding-top: 95px;*/
+    /*padding-left: 13px;*/
+}
+
+.recording-button-fancy-inside {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 2;
+    width: 195px;
+    height: 195px;
+}
+
+/*.second-2 {*/
+/*margin: 20px 0 0 20px;*/
+/*width: 170px;*/
+/*height: 170px;*/
+/*}*/
+
+.start-recording-text {
+    text-align: center;
+    position: absolute;
+    top: 44%;
+    /*left: 15px;*/
+    width: 100%;
+    color: white;
+    z-index: 100;
+}
+
+.countdown {
+    font-size: 70px;
+    top: 27%;
+}
+
+.time {
+    align-self: flex-end;
+    margin: 0;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.recording-main-content-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.recording-nav {
+    display: flex;
+}
+
+.reset-button {
+    padding: 9px 0 0 10px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-right: 20px;
+}
+
+a.reset-button:hover {
+    background-color: #3282F0;
+}
+
+a.done {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid white;
+    padding: 10px 0 0 22px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+a.done:hover {
+    background-color: #3282F0;
+}
+
+
+a.save {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid white;
+    padding: 10px 0 0 22px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+a.save:hover {
+    background-color: #3282F0;
+}
+
+a.upload-video-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: 3px solid white;
+    padding: 10px 0 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+a.upload-video-button:hover {
+    background-color: #3282F0;
+}
+
+.my-progress-bar {
+    width: 100%;
+    height: 30px;
+}
+
+.progress-bar-text {
+    color: black;
+    padding-left: 10px;
+}
+
+.take-picture-button {
+    position: absolute;
+    top: 220px;
+    left: 160px;
+}
+
+/*// calculating the position of head frame so that it center horizontally*/
+/*//$head-frame-left: ($video-width - $head-frame-width) / 2;*/
+
+.head-frame {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px dotted white;
+    top: 20px;
+    left: 110px;
+}
+
+.confirm-picture-button {
+    position: absolute;
+    top: 220px;
+    left: 160px;
+}
+
+.upload-success-text {
+    position: absolute;
+    font-size: 40px;
+    top: 100px;
+    left: 40px;
+    color: white;
+}
+
+#hidden-canvas {
+    display: none;
+}
+
+.image-container {
+    position: relative;
+}
+
+#current-image {
+    background: gray;
+}
+
+a.download {
+    margin-top: 5px;
+}
+
+a.download:hover {
+    color: #3282F0;
+}
+
+/*spinner css*/
+
+.spinner-container {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+}
+
+/******************************************************************************************
+***************                           SINGLE 10                         ***************
+*******************************************************************************************/
+
+.single10 {
+    height: 50px;
+    width: 50px;
+    border: 8px solid #eee;
+    border-radius: 50%;
+    position: relative;
+    -webkit-animation: single10anim 2s infinite linear;
+    animation: single10anim 2s infinite linear;
+}
+
+.single10:before {
+    content: '';
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: #bfbfbf;
+    position: absolute;
+    top: -7px;
+    left: 14px;
+}
+
+@-webkit-keyframes single10anim {
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes single10anim {
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}

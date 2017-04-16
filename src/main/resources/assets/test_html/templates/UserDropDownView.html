@@ -1,0 +1,13 @@
+<li class="dropdown user pull-right">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <img alt="profile-pic" src="https://s3.us-east-2.amazonaws.com/esl-public/<%= picture.path %>" height="25" width="25" style="border-radius: 50%;"/>
+    <span class="username"><i class="fa fa-angle-down" aria-hidden="true"></i>
+                    <%= fname %> <%= lname %></span></a>
+                    <input type="hidden" name="account_id">
+                    <ul class="dropdown-menu">
+                        <li><a href="#user/candidate/resetPw">Change Password</a></li>
+                        <li><a href="#user/changeEmail">Change Login Email</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#logout/user">Log out</a></li>
+                    </ul>
+</li>

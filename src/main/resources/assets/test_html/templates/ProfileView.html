@@ -1,0 +1,264 @@
+<div class="container" data-spy="scroll" data-target=".user-toolbox" data-offset="50" style="position: relative;">
+	<div class="row mt50">
+
+		<!-- Right Nav menu for large screen -->
+		<div class="col-md-3 visible-md-block visible-lg-block">
+			<div class="user-toolbox" >
+				<ul id="user-profile-nav">
+					<li><a href="#personal-information"><i class="fa fa-address-card" aria-hidden="true"></i> Basic Information</a></li>
+					<li><a href="#experience"><i class="fa fa-book" aria-hidden="true"></i> Experience</a></li>
+					<li><a href="#education"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</a></li>
+					<li><a href="#certification"><i class="fa fa-certificate" aria-hidden="true"></i> Certification</a></li>
+					<li><a href="#socialMedia"><i class="fa fa-paper-plane" aria-hidden="true"></i> Social Media</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="col-md-9 col-sm">
+			<div class="content-panel">
+				<h2 class="section-heading">My Profile</h2>
+					<div class="row">
+						<div class="col-xs-6">
+							<!-- Upload Profile photo -->
+							<div class="col-xs-8">
+								<form method="post" enctype="multipart/form-data" class="avatar" id="avatar-form" >
+									<div class="slim">
+										<input type="file" name="profilepic" id="upload-avatar" data-output-base64="false" />
+										<img src="https://s3.us-east-2.amazonaws.com/esl-public/<%= picture.path %>" width="240" height="240">
+									</div>
+									
+								    <button type="submit" id="uploadAvatar" class="btn btn-blue">Upload</button>
+									<!--this is used for taking photo-->
+                                    <div class="take-picture-modal"></div>
+									<div class="recording-modal"></div>
+                                    <button class='open-take-video btn-blue'>Take Your Picture</button>
+									<button class='open-recording btn-blue'>Take Video</button>
+								</form>
+							</div>
+							<div class="col-xs-4">
+								<p>Recruiters can see this photo when you apply to their jobs.</p>
+								<div class="alert alert-success alert-pic mt8 hidden" id="resume-feedback"></div>
+							</div>
+							
+						</div>
+
+						<div class="col-xs-6">
+							<form enctype="multipart/form-data" id="resume-form">
+								<label for="resume">Upload Resume*</label>
+								<input type="hidden" name="profile_id" value="<%= id %>">
+								<input type="file" name="file" class="form-control-file"/>
+
+								<button type="submit" class="btn btn-blue mt8" id="uploadResume">Upload</button>
+							</form>
+
+							<div class="alert alert-success alert-profile mt8 hidden" id="resume-feedback"></div>
+						</div>
+						
+					</div>
+					<div class="clearfix visible-xs-block"></div>
+					<div class="row">
+						<div class="col-xs-12">
+						<form id="update-profile-form-old">
+							<fieldset id="personal-information">
+							<h4 class="fs-title"><i class="fa fa-address-card" aria-hidden="true"></i> Basic Information</h4>
+							<input type="hidden" name="id" value="<%= id %>">
+							<div class="col-sm-4">
+								<label>First Name*</label>
+								<input type="text" name="fname" class="form-control" value="<%= fname %>" required>
+							</div>
+
+							<div class="col-sm-4">
+								<label>Last Name*</label>
+								<input type="text" name="lname" value="<%= lname %>" class="form-control" required>
+							</div>
+
+							<div class="col-sm-4">
+								<label>Gender</label>
+								<select class="form-control" name="gender" required>
+									<option value="unknown">Decline to Self Identify</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+								</select>
+							</div>
+
+							<div class="col-sm-6">
+								<label>How soon can you start?*</label>
+								<input type="date" name="availableDate" class="form-control data-input" required value="<%= availableDate %>">
+							</div>
+
+							<div class="col-sm-6">
+								<label>Date of Birth</label>
+								<input type="date" name="birth" class="form-control data-input" max="2003-01-01" value="<%= birth %>">
+							</div>
+
+							<div class="col-sm-12">
+								<label>Nationality*</label>
+								<select name="nationality" class="form-control" required>
+									<option value="USA">USA</option>
+									<option value="Canada">Canada</option>
+									<option value="South Africa">South Africa</option>
+									<option value="Australia">Australia</option>
+									<option value="New Zealand">New Zealand</option>
+									<option value="Ireland">Ireland</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
+							<!-- <div class="col-sm-6">
+								<label>Others:</label>
+								<input type="text" name="" class="form-control" disabled>
+							</div> -->
+
+							</fieldset>
+
+							<fieldset id="experience">
+								<h4 class="fs-title"><i class="fa fa-book" aria-hidden="true"></i> Experience</h4>
+								<div id="placeholder-exp">
+									
+								
+
+								<input type="hidden" name="relaventExperiences[0][id]" value="">
+								
+								<div class="col-sm-6">
+									<label for="role">Title</label>
+									<input type="text" name="relaventExperiences[0][role]" class="form-control">
+								</div>
+
+								<div class="col-sm-6">
+									<label for="company">Company Name</label>
+									<input type="text" name="relaventExperiences[0][company]" class="form-control">
+								</div>
+
+								<div class="col-sm-6">
+									<label for="fromDate">Start Date</label>
+									<input type="date" name="relaventExperiences[0][fromDate]" class="form-control">
+								</div>
+
+								<div class="col-sm-6">
+									<label for="toDate">End Date</label>
+									<input type="date" name="relaventExperiences[0][toDate]" class="form-control">
+								</div>
+
+								<div class="col-xs-12">
+									<label>Summary</label>
+									<textarea rows="4" name="relaventExperiences[0][responsibility]" class="form-control"></textarea>
+								</div>
+								</div>
+								<!-- <button type="button" class="btn btn-default mt8 floatr" id="addExp">Add Experience</button>
+ -->
+							</fieldset>
+
+							<fieldset id="education">
+								<h4 class="fs-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h4>
+								<input type="hidden" name="educationExperiences[0][id]" value="">
+
+								<div class="col-md-3 col-sm-6">
+									<label for="degree">Degree</label>
+									<select class="form-control" name="educationExperiences[0][degree]" required>
+										<option value="Bachelor Degree">Bachelor's Degree</option>
+										<option value="Master Degree">Master's Degree</option>
+										<option value="Doctoral's Degree">Doctoral's Degree</option>
+										<option value="Others">Others</option>
+									</select>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<label for="field">Major</label>
+									<input type="text" name="educationExperiences[0][field]" class="form-control" required>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<label for="fromDate">Start Date</label>
+									<input type="date" name="educationExperiences[0][fromDate]" class="form-control" required>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<label for="toDate">End Date</label>
+									<input type="date" name="educationExperiences[0][toDate]" class="form-control" required>
+								</div>
+
+								<div class="col-md-6 col-sm-12">
+									<label for="school">School Name</label>
+									<input type="text" name="educationExperiences[0][school]" class="form-control" required>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<label for="country">Country</label>
+									<input type="text" name="educationExperiences[0][country]"  class="form-control" required>
+								</div>
+
+								<div class="col-md-3 col-sm-6">
+									<label for="city">City</label>
+									<input type="text" name="educationExperiences[0][city]"  class="form-control" required>
+								</div>
+
+								<!-- <button type="button" class="btn btn-default mt8 floatr" id="addEdu">Add Education</button> -->
+							</fieldset>
+
+							<fieldset id="certification">
+								<h4 class="fs-title"><i class="fa fa-certificate" aria-hidden="true"></i> Certification</h4>
+								<input type="hidden" name="certifications[0][id]" value="">
+								<div class="col-sm-4 col-xs-12">
+									<label>Certificate Type</label>
+									<input type="text" name="certifications[0][type]" class="form-control">
+								</div>
+
+								<div class="col-sm-4 col-xs-12">
+									<label for="issueDate">Issue Date</label>
+									<input type="date" name="certifications[0][issueDate]" class="form-control">
+								</div>
+
+								<div class="col-sm-4 col-xs-12">
+									<label for="issueDate">Issue Body</label>
+									<input type="text" name="certifications[0][issuingBody]" class="form-control">
+								</div>
+
+								<!-- <button type="button" class="btn btn-default mt8 floatr" id="addCert">Add Certification</button> -->
+							</fieldset>
+
+							<fieldset id="socialMedia">
+								<h4 class="fs-title"><i class="fa fa-paper-plane" aria-hidden="true"></i> Social Media Links</h4>
+
+								<div class="col-xs-12">
+									<label>Personal Website</label>
+										<input class="form-control" type="url" name="personalWebsite" value="<%= personalWebsite %>">
+								</div>
+
+								<div class="col-xs-12">
+									<label>Linkedin</label>
+									<input class="form-control" type="url" name="linkedin" value="<%= linkedin %>">
+									
+								</div>
+
+								<div class="col-xs-12">
+									<label>Twitter</label>
+									<input class="form-control" type="url" name="twitter" value="<%= twitter %>">
+								</div>
+
+								<div class="col-xs-12">
+									<label>Facebook</label>
+									<input class="form-control" type="url" name="facebook" value="<%= twitter %>">
+								</div>
+
+								<div class="col-xs-12">
+									<label>Instagram</label>
+									<input class="form-control" type="url" name="instagram" value="<%= twitter %>">
+								</div>
+
+								<div class="col-xs-12">
+									<label>Wechat</label>
+									<input class="form-control" type="url" name="wechat" value="<%= wechat %>">
+								</div>
+
+							</fieldset>
+							<button class="btn btn-pink btn-default mt8" type="submit" id="updateProfile">SAVE</button>
+						</form>
+						</div>
+					</div>
+					
+				</div>
+				</div>
+
+		</div>
+
+
+	</div>

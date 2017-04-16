@@ -1,0 +1,78 @@
+<div class="container">
+	<div class="content-panel">
+		<h2 class="section-heading">Get more accurate recommendations!</h2>
+		<p>Add some tags to get more matched candidate recommendation for this job!</p>
+		<p>Please let us know your preference of this job.</p>
+		<p class="text-muted">These tags will not be displayed to candidates. We use tags to recommend candidates only.</p>
+
+		<form id="TagsInputForm" class="form-horizontal">
+			<div class="form-group">
+        		<label class="col-xs-3 control-label">Prefered Age Group</label>
+        		<div class="col-xs-8">
+            	<input type="text" name="age" class="form-control" value="Below 30,30 to 40,40 to 50,Above 50" data-role="tagsinput" />
+        		</div>
+    		</div>
+		    <div class="form-group">
+		        <label class="col-xs-3 control-label">Prefered Nationality</label>
+		        <div class="col-xs-8">
+		            <input type="text" name="nationalities" class="form-control" value="United States,Australia,Canada,UK,South Africa,New Zealand,Ireland,Others" data-role="tagsinput"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="col-xs-3 control-label">Prefered Visa Status</label>
+		        <div class="col-xs-8">
+		            <input type="text" name="visa" class="form-control" value="Z-Visa,M-Visa,Travel Visa,No Visa" data-role="tagsinput"/>
+		        </div>
+		    </div>
+		   <!--  <div class="row">
+		    	<div class="col-xs-12 text-center">
+		    	<button class="btn btn-blue mt8" id="submitBtn">Submit</button>
+		    	</div>
+		    </div> -->
+		    
+
+		    
+		</form>
+
+		<div class="row">
+		    	<div class="col-xs-12 text-center">
+		    	<button class="btn btn-blue mt8" id="submitBtn">Submit</button>
+		    	</div>
+		    </div>
+	</div>
+</div>
+
+<script>
+// $(document).ready(function () {
+//     $('#bootstrapTagsInputForm').find('[name="age"]')
+//             // Revalidate the cities field when it is changed
+//             .change(function (e) {
+//                 $('#bootstrapTagsInputForm').formValidation('revalidateField', 'age');
+//             })
+//             .end()
+//         .find('[name="countries"]')
+//             // Revalidate the countries field when it is changed
+//             .change(function (e) {
+//                 $('#bootstrapTagsInputForm').formValidation('revalidateField', 'countries');
+//             })
+//             .end()
+//         .formValidation({
+//             framework: 'bootstrap',
+//             excluded: ':disabled',
+//             icon: {
+//                 valid: 'glyphicon glyphicon-ok',
+//                 invalid: 'glyphicon glyphicon-remove',
+//                 validating: 'glyphicon glyphicon-refresh'
+//             },
+//             fields: {
+//                 cities: {
+//                     validators: {
+//                         notEmpty: {
+//                             message: 'Please enter at least one age group you like the most.'
+//                         }
+//                     }
+//                 },
+//             }
+//         });
+// });
+</script>

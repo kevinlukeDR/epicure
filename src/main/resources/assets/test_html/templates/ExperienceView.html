@@ -1,0 +1,74 @@
+<div class="row experience">
+	<div class="row">
+		<div class="col-xs-12">
+			<h5><%= role %><span class="text-muted">, <%= fromDate %> to <%= toDate %></span></h5>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-10">
+		 	<p class="text-muted"><%= responsibility %></p>
+		</div>
+		<div class="col-xs-1">
+		 	<span class="glyphicon glyphicon-edit" aria-hidden="true" id="edit-exp"></span>
+		</div>
+		<div class="col-xs-1">
+		 	<span class="glyphicon glyphicon-remove" aria-hidden="true" id="remove-exp"></span>
+		</div>
+	</div>
+	
+</div>
+<div class="app"></div>	
+
+
+
+<!-- <script type="text/template" id="experience-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Experience</h3>
+    </div>
+    <div class="bbm-modal__section">
+    <form id="edit-experience-form">
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="role">Title</label>
+				<input type="text" name="role" class="form-control" value="<%= role %>" required >
+			</div>				
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="company">Company Name</label>
+				<input type="text" name="company" class="form-control"  value="<%= company %>" required>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="fromDate">Start Date</label>
+				<input type="date" name="fromDate" class="form-control"  value="<%= fromDate %>" required>
+			</div>								
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="toDate">End Date</label>
+				<input type="date" name="toDate" class="form-control" value="<%= toDate %>" required>
+			</div>				
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label>Summary</label>
+				<textarea rows="4" name="responsibility" class="form-control"><%= responsibility %></textarea>
+				<span id="chars">255</span> characters remaining
+			</div>
+		</div>
+	</form>
+
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+  </script> -->

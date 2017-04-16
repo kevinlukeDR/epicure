@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-xs-10">
+		<h5 class="w80"><a href="#jobs/<%= id %>"><%= jobName %></a></h5>
+		<p>Saved on <% var d = new Date(date),
+					fragments = [
+					d.getMonth()+1,
+					d.getDate(),
+					d.getFullYear()
+					];
+					print(fragments.join('-'));
+				 %></p>
+	</div>
+	<div class="col-xs-2">
+		<span class="fav-button" id="fav-button"><i class="fa fa-heart fa-2x" aria-hidden="true"></i></span>
+	</div>
+
+</div>
+
+
+

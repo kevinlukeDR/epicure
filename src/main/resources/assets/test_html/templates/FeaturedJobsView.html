@@ -1,0 +1,53 @@
+
+<!-- <div class="autoplay" id="featured-content"> -->
+<!-- <div class="carousel slide multi-item-carousel" id="theCarousel">
+     <div class="carousel-inner" id="featured-content" role="listbox"> -->
+
+<div class="autoplay" id="featured-content">
+<!--     <div>
+        <a href="#jobs/12" class="featured-link">
+            <img src="images/featuredjob/chongqing.jpg" class="featured-img img-responsive">
+            <div class="text"  style="color:#333">
+                <h3 class="position-title">Moses Culture Education ESL Teachers</h3>
+                <p class="position-detail">
+                    <strong>City: </strong><span>ShenZhen, China</span><br>
+
+                    <strong>Grade: </strong><span>Pre-K+ (Age 0-6)</span>
+                </p>
+            </div>
+        </a>
+    </div> -->
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.autoplay').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+    });
+</script>

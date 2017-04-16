@@ -1,0 +1,86 @@
+@import 'preset';
+
+/******* multistep forms ****/
+#application-form{
+  // width: 710px;
+  // margin: 10px auto;
+  text-align: center;
+  position: relative;
+}
+
+#application-form fieldset{
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+  padding: 20px 30px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  position: absolute;
+  
+}
+/* Hide other fieldset */
+#application-form fieldset:not(:first-of-type){
+  display: none;
+
+}
+
+
+h4.fs-title{
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+
+#progressbar{
+  margin-bottom: 30px;
+  overflow:hidden;
+  counter-reset: step;
+}
+#progressbar li{
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 25%;
+  float: left;
+  color: $blue;
+
+  position: relative;
+}
+
+#progressbar li:before{
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  display: block;
+  color: $white;
+  background: $pink;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+
+}
+
+#progressbar li.active:before, #progressbar li.active:after{
+  background: $blue;
+}
+
+/*Progressbar connectoers*/
+#progressbar li:after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: $pink;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1;
+
+}
+
+#progressbar li:first-child:after{
+  content: none;
+}

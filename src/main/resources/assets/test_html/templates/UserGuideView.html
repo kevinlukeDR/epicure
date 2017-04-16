@@ -1,0 +1,107 @@
+<div class="container mt50">
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2 col-xs-12">
+			<div class="content-panel text-center">
+			<h2 class="section-heading text-center">Highlight Yourself</h2>
+			<p>Increase your chance of getting seen!</p>
+			<ul>
+				<li><h5>Upload your resume.</h5>
+				<div class="row mb10">
+					<form enctype="multipart/form-data" id="resume-form">
+					<div class="form-inline">
+						<div class="form-group">
+							<input type="file" name="file" class="form-control-file"/>
+						</div>				
+					</div>
+							<!-- <div class="col-xs-12"> -->
+								<button type="submit" class="btn btn-blue mt8 form-control-file" id="uploadResume">Submit</button>
+							<!-- </div> -->
+						
+						
+						  <div class="col-xs-12">
+						  	<div class="alert alert-success text-center alert-profile mt8 hidden">Success!</div>
+						  </div>
+					</form>
+					<!-- Drop Zone -->
+				    <h4>Or drag and drop files below</h4>
+				    <div class="upload-drop-zone" id="drop-zone">
+				        Just drag and drop files here
+				    </div>
+				</div>
+				</li>
+
+				<li><h5>Upload a profile picture</h5>
+					<div class="row mb10">
+						
+					<p class="text-muted">We recommend a recent and professional photo.</p>
+					<form method="post" enctype="multipart/form-data" id="avatar-form" >
+						
+						<div class="row">
+							<div class="col-xs-12" style="width: 240px; height: 240px; margin-left: 120px;">
+								<div class="slim">
+									<input type="file" name="profilepic" id="upload-avatar" data-output-base64="false" />
+								</div>
+							</div>
+
+							<div class="col-xs-12">
+								<button type="submit" id="uploadAvatar" class="btn btn-blue mt8" style="width: 100%;">Submit</button>
+							</div>
+						</div>
+						<div class="clearfix visible-xs-block"></div>
+						<div class="row">
+						  <div class="col-xs-12">
+						  	<div class="alert alert-success text-center alert-pic mt8 hidden">Success!</div>
+						  </div>
+						</div>
+
+					</form>
+					</div>
+				</li>
+
+
+				<li><h5>Upload a Self-introduction Video</h5>
+				<p class="text-muted">Profile with video introductions gets 83% more views.</p>
+				<form id="video-form">
+					<h5>Please record a self-introduction video and specify the following information:</h5>
+						<ul>
+							<li>First name</li>
+							<li>Age</li>
+							<li>Highest level of education</li>
+							<li>ESL Certification</li>
+							<li>Years of teaching experience</li>
+							<li>Preferred teaching age</li>
+						</ul>
+					<h5>Additionally, please answer one of the following:</h5>
+					<div class="col-xs-12">
+					
+						<select class="form-control" id="interview-questions">
+							
+						</select>
+					</div>
+					
+					<div class="col-xs-12 mt10">
+						<button class="btn btn-blue open-recording" style="width: 100%">Start Recording</button>
+					<div class="recording-modal"></div>
+					</div>
+					
+				</form>
+					
+				</li>
+
+			</ul>
+			<a href="" class="text-muted text-center mt10">Explore Job First</a>
+			</div>
+		</div>
+		<div class="col-md-3 col-xs-12">
+			<div class="alert alert-info" role="alert">
+				<h5 class="black-text">Why should I fill out my profile?</h5>
+				<p>Having a profile will help you stand out from the crowd and give employers more reasons to pay attention to your job application.</p>
+				<h5 class="black-text">Is my information private?</h5>
+				<p>Yes. Your information is not shared with anyone without your explicit consent. </p>
+			</div>
+		</div>
+	
+	</div>
+	
+	
+</div>

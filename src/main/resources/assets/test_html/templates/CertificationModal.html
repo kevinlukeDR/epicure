@@ -1,0 +1,33 @@
+<div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Certification</h3>
+</div>
+    <div class="bbm-modal__section">
+    <form id="edit-certification-form">
+		<div class="col-sm-6 col-xs-12"> 
+			<div class="form-group">
+				<label>Certificate Type</label>
+				<input type="text" name="type" class="form-control" value="<%= type %>" id="type" required>
+			</div>
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<div class="form-group">
+				<label for="issueDate">Issue Date</label>
+				<input name="issueDate" class="form-control date-input" value="<%= issueDate %>" id="issueDate" required data-date-format="yyyy-mm-dd">
+			</div>
+		</div>
+
+		<div class="col-sm12 col-xs-12">
+			<div class="form-group">
+				<label for="issueDate">Issue Body</label>
+				<input type="text" name="issuingBody" class="form-control" value="<%= issuingBody %>" id="issuingBody" required>
+			</div>
+		</div>
+	</form>
+
+	
+    </div>
+
+<div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+</div>

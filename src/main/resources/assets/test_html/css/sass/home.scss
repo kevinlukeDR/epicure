@@ -1,0 +1,13 @@
+@import 'preset';
+.select2-container--default .select2-selection--single {
+	border: 1px solid #aaa;
+    font-size: 1.3em !important;
+    padding: 4px !important;
+    text-align: center;
+    height: 40px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $blue !important;
+  color: white; 
+}

@@ -1,0 +1,11 @@
+<td class="table-position"><a href="#drafts/<%= id %>"><%= position %></a></td>
+<td><% var d = new Date(postDate),
+fragments = [d.getMonth()+1,d.getDate(),d.getFullYear()];
+print(fragments.join('-')); %></td>
+<td>close Date</td>
+<td>
+	<div class="btn-group" role="group" aria-label="...">
+		<button type="button" class="btn btn-blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>review</button>
+		<button type="button" class="btn btn-default" id="duplicate"><i class="fa fa-times" aria-hidden="true"></i> DUPLICATE</button>
+	</div>
+</td>

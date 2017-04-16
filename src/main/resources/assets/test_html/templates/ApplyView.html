@@ -1,0 +1,47 @@
+<div id="apply-form-container">
+	<h4 class="fs-title text-center">Apply Now</h4>
+	<div class="alert alert-warning profile-warning hidden">
+		Your profile is incompeleted. You may want to <a href="#user/profile" target="_blank">complete profile</a> before application.
+	</div>
+	<div id="apply-form">
+		<div class="form-group">
+			<input type="email" name="contactEmail" id="email" placeholder="Contact Email" class="form-control">
+		</div>
+		
+		<div class="form-group">
+			<textarea rows="4" name="additionalMessage" class="form-control mt10" placeholder="Additional Message"></textarea>
+			<span id="chars">5000</span> characters remaining
+		</div>
+		
+		<div class="white-panel mt10" style="position: relative;" id="resume-content">
+			<!-- <form enctype="multipart/form-data" id="resume-replace-form">
+				<div class="form-inline"><div class="form-group"><input type="file" name="file" class="form-control-file"/></div><button type="submit" class="btn btn-blue mt10" id="upload">Submit</button></div>
+			</form>
+		    <h4>Or drag and drop files below</h4>
+		    <div class="upload-drop-zone" id="drop-zone">
+		        Just drag and drop files here
+		    </div> -->
+			<h5>Resume on file: </h5>
+			<input type="hidden" name="resumePath" id="resumePath">
+			<div class="row">
+				<div class="col-xs-6">
+					<p id="latest-resume">
+					</p>
+				</div>
+				<div class="col-xs-3">
+				<!-- 	<span class="text-button" id="replace"><i class="fa fa-refresh" aria-hidden="true"></i> Replace</span> -->
+				</div>
+				<div class="col-xs-3">
+					<span class="text-button" id="new"><i class="fa fa-cloud-upload" aria-hidden="true"></i> New</span>
+				</div>
+			</div>
+			<ul id="resume-list">
+				
+			</ul>
+			
+		</div>
+
+		<button class="btn btn-blue mt10" id="apply" style="width: 100%">Apply Now</button>
+	</div>
+	<div class="apply-success"></div>
+</div>

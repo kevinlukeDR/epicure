@@ -1,0 +1,73 @@
+<!-- *********************-->
+<!--  Basic Info modal -->
+<!-- *********************-->
+
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Basic Information</h3>
+    </div>
+    <div class="bbm-modal__section">
+
+		<form id="edit-basic-form">
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>First Name*</label>
+					<input type="text" name="fname" class="form-control" value="<%= fname %>" required>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Last Name*</label>
+					<input type="text" name="lname" value="<%= lname %>" class="form-control" required>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Gender</label>
+					<select class="form-control gender" name="gender" required>
+						<option value="unknown">Decline to Self Identify</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+			</div>
+
+			
+
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Year of Birth (YYYY)</label>
+					<input type="number" name="birth" class="form-control" value="<%= birth %>" min="1900">
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>How soon can you start?*</label>
+					<input  name="availableDate" class="form-control date-input" required value="<%= availableDate %>" data-date-format="yyyy-mm-dd">
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="form-group">
+					<label>Nationality*</label>
+					<select name="nationality" class="form-control select-nationality" required>
+					<option value="<%= nationality %>" selected="selected"><%= nationality %></option>
+<!-- 						<option value="USA">USA</option>
+						<option value="Canada">Canada</option>
+						<option value="South Africa">South Africa</option>
+						<option value="Australia">Australia</option>
+						<option value="New Zealand">New Zealand</option>
+						<option value="Ireland">Ireland</option>
+						<option value="Other">Other</option> -->
+					</select>
+				</div>
+			</div>
+		</form>
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>

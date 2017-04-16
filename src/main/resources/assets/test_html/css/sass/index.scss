@@ -1,0 +1,416 @@
+@import 'preset';
+// @import 'recruiter';
+// @import 'user';
+
+html,body {
+    padding-top: 25px; 
+}
+
+/***** Navigation Bar *****/
+.navbar-brand{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.navbar-custom{
+    background-color: white;
+    .navbar-nav>li>a{
+        height: 40px;
+        padding: 10px 0px;
+        margin: 1px 10px;
+    }
+}
+
+.navbar-custom .navbar-nav>li.active>a, 
+.navbar-custom.navbar-nav>li.active>a:focus,
+.navbar-custom.navbar-nav>li.active>a:hover{
+    background-color: white !important;
+    border-bottom: solid 2px $pink;
+    font-weight: 700;
+}
+ul.nav.navbar-nav{
+    color: black;
+    //font-weight: 700;
+}
+
+
+li.nav-right{
+ -webkit-border-radius: 16;
+  -moz-border-radius: 16;
+  border-radius: 20px;
+  font-family: Arial;
+  
+  padding: 1px 3px 1px 3px;
+  margin-right: 10px;
+  margin-top:5px;
+  
+  text-decoration: none;
+  text-align: center;
+  // .nav-right-pink {border: solid $pink 2px;}
+}
+
+ul.navbar-nav>li>a.pink{
+    width: 75px;
+    font-size: 15px;
+    color: $pink;
+    font-weight: 700;
+}
+
+ul.navbar-nav>li>a.pink:focus, ul.navbar-nav>li>a.pink:hover{
+        color: $pink-hover;
+}
+
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+     padding-top: 10px; 
+     padding-bottom: 10px; 
+    }
+}
+
+
+
+/******* Header ********/
+// header{
+//     margin-bottom: 20px;
+// }
+.site-header{
+    min-height: 60vh;
+    background: $white;
+    // background-image: url("../../img/slideshow.jpg");
+     background-image: url("../../img/sea.jpg");
+    // background-image: url("../../img/homebg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.site-header .header-title {
+    font-size: 4em;
+    // background: url("../../img/text2.png") no-repeat 100%/cover;
+    margin-left: auto;
+    margin-right: auto;
+    // max-width: 800px;
+    width: 100%;
+    // text-indent: -999%;
+    // margin-top: 20vh;
+    margin-top: 10vh;
+    color: #333;
+    // color: white;
+    margin-bottom: 40px;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+    //knockout text
+    // -webkit-text-fill-color: transparent;
+    // -webkit-background-clip: text;
+    // background-image: url(../../img/sea-bg.jpg);
+
+    
+    // text-shadow: 0px 3px 0px #b2a98f,
+    //              0px 14px 10px rgba(0,0,0,0.15),
+    //              0px 24px 2px rgba(0,0,0,0.1),
+    //              0px 34px 30px rgba(0,0,0,0.1);
+}
+
+/****** Search *******/
+.homesearchbtn{
+    width: 31%;
+}
+div.search-area{
+    margin: auto;
+    margin-top: 20px;
+    margin-top: 20vh;
+    width:100%;
+    padding: 20px;
+    
+    span.search-row{
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+.search-input-lg{
+        height: 43px;
+        font-size:16px; 
+        //margin-bottom: 10px;
+}
+span.select2{
+    width: 100% !important;
+    height: 35px !important;
+    margin-bottom: 10px;
+}
+// .chosen-container {
+//     font-size: 16px;
+// }
+// .chosen-container-multi >ul.chosen-choices {
+//     margin-bottom: 10px;
+//     height: 45px;
+// }
+// .chosen-container-multi>ul.chosen-choices>li.search-field{
+//     padding:8px;
+// }
+
+/****Featured Jobs ****/
+
+.multi-item-carousel{
+  .carousel-inner{
+    > .item{
+      transition: 500ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-33%;
+      }
+      &.right{
+        left:33%;
+      }
+    }
+    .next{
+      left: 33%;
+    }
+    .prev{
+      left: -33%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}
+.featured-img{
+    opacity: 1; 
+    width: 308px; 
+    height: 232.5px
+}
+
+.content-section-a{
+    background-color: #f8f8f8;
+    padding:50px 0;
+}
+.content-section-b{
+    border-top: 1px solid #e7e7e7;
+    padding:50px 0;
+}
+.slideContent{
+    overflow: hidden;
+    max-width: 700px;
+    max-height: 360px;
+
+}
+.cell{
+    //display: table-cell;
+    float: none !important;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+}
+.featured-link-col{
+    display: inline-block;
+    white-space: normal;
+    width: 100%;
+    max-width: 320px;
+    padding: 0 10.5px;
+}
+
+.featured-link{
+    text-decoration: none;
+    text-align: left;
+    border: solid 1px #e0e2e3;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    max-width: 310px;
+    height: 380px;
+    position: relative;
+    margin-top: 20px;
+
+}
+.featured-link>.text{
+    padding: 10px;
+}
+.featured-link-col div.text{
+    position: absolute;
+    bottom: 7px;
+    left: 14px;
+    z-index: 1;
+}
+
+
+
+.carousel-control-cus{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: $pink;
+    text-align: center;
+}
+.carousel-control-cus.right{
+        right: 0;
+        left: auto;
+}
+
+.carousel-control-cus:hover,
+.carousel-control-cus:focus {
+  color: $pink-hover;
+  text-decoration: none;
+}
+
+.carousel-control-cus .glyphicon-chevron-left,
+.carousel-control-cus .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+}
+.carousel-control-cus .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+.carousel-control-cus.glyphicon-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+
+/****** Register and Login *****/
+
+#loginButton, #registerButton{
+   width: 100%;
+}
+/******** Share button *********/
+.fb_iframe_widget {
+    top: -6px !important;
+}
+
+/****** Job Board ***********/
+
+#jobBoard-filter{
+    margin-top: 40px;
+}
+
+li.check-filter{
+    padding: 1px 10px;
+}
+
+/*****Feedback button ******/
+.slide-panel {
+    position: relative;
+}
+.slide-panel-content {
+    position: fixed;
+    z-index: 1001;
+    background-color: white;
+    top: 280px;
+    right: -353px;
+    width: 312px;
+    border: 1px solid hsla(0, 0%, 80%, 1.0);
+    padding: 0 20px 20px 20px;
+    transition: all 0.5s ease;
+}
+.slide-panel-tab {
+    // background: hsla(0, 100%, 41%, 1.0);
+    background: $pink;
+    color: hsla(100, 100%, 100%, 1.0);
+    padding: 5px;
+    display: block;
+    position: fixed;
+    top: 300px;
+    right: -20px;
+    transition: all 0.5s ease;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    display: inline-block;
+    border: none;
+    z-index: 200;
+    cursor: pointer;
+}
+.feedback-btn {
+    display: none;
+}
+.feedback-btn:checked + label + .slide-panel-content {
+    right: 0;
+}
+.feedback-btn:checked ~ label {
+    right: 292px;
+}
+
+
+/**** Footer *****/
+
+footer{
+    background-color: #f5f5f5;
+}
+.footer-inner{
+    padding: 35px 15px;
+}
+div.footer-inner>div>div>a, div.footer-inner>div>a{
+    color:$blue;
+}
+div.footer-inner>div>div>a:focus, div.footer-inner>div>a:hover{
+    color: $blue;
+    text-decoration: none;
+}
+/**** For tablets ****/
+@media (min-width: 768px) and (max-width: 991px){
+    #content{
+        margin-top: 40px;
+    }
+
+    .site-header{
+    min-height: 70vh;
+}
+}
+
+/***** For mobile phones ****/
+@media (max-width: 767px){
+
+    #content{margin-top: 20px;}
+    .site-header{
+    min-height: 400px;
+    }
+    .site-header .header-title {
+    font-size: 40px;
+    //margin-top: 50px;
+    }
+.homesearchbtn{
+    width: 100%;
+}
+    div.search-area{
+        margin-top: 0px;
+        width:100%;
+        padding: 15px;
+        .search-input-lg{
+            height: 32px;
+            font-size:15px; 
+            margin-bottom: 10px;
+        }
+        span.search-row{
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+}
+@media (max-width:767px){
+    .hideSm {
+        display: none !important;
+    }
+    .slideContent.hideSm{display: none !important;}
+
+    .slideContent .featured-link-col{
+        padding: 0 7px;
+    }
+}
+

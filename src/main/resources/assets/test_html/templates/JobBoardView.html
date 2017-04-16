@@ -1,0 +1,286 @@
+<div class="container-fluid mt-user" >
+	<div class="row">
+	<!-- filter -->
+		<div class="col-lg-3 col-sm-4 hideSm" id="jobBoard-filter">
+		<!-- For search that do not call the API -->
+			<form id="search-form" method="POST" enctype="multipart/form-data">
+				<div class="input-group">
+					<input id="localSearch" class="form-control" type="text" placeholder="Search in the results"/>
+					<span class="input-group-btn">
+					<button id="localSearchButton" type="submit" class="btn btn-default btn-pink"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+					</span>
+				</div>
+			</form>
+
+			<!-- Check box filter -->
+			<form id="check-filter">
+				<label>Job Type</label>
+				<div class="form-group">
+					<ul class="list-group">
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="jobType" type="checkbox" value="Full Time" class="filter-jobType filter">Full Time
+								</label>
+							</div>
+						</li>
+					<li class="list-group-item check-filter">
+						<div class="checkbox" >
+							<label>
+							<input data-filter="jobType" type="checkbox" value="Part Time" class="filter-jobType filter">Part Time
+							</label>
+
+						</div>
+					</li>
+					
+					<li class="list-group-item check-filter">
+					<div class="checkbox"  >
+						<label>
+							<input data-filter="jobType" type="checkbox" value="Online" class="filter-jobType filter">
+							Online
+						</label>
+
+					</div>
+				</li>
+					</ul>
+				</div>
+			</form>
+				<!-- Select Filters -->
+			<form>
+				<div class="form-group">
+					<label>City: </label>
+					<select data-filter="city" class="filter-city filter form-control">
+						<option value="">Select City</option>
+						<option value="Beijing">Beijing</option>
+						<option value="Shenzhen">Shenzhen</option>
+						<option value="Chengdu">Chengdu</option>
+						<option value="Wuhan">Wuhan</option>
+						<option value="Shanghai">Shanghai</option>
+						<option value="">Show All</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Grade: </label>
+					<select data-filter="grade" class="filter-grade filter form-control">
+						<option value="">Education Level:</option>
+						<option value="0-6">Pre-K+ (Age 0-5)</option>
+						<option value="7-12">Elementary School (Age 6-12)</option>
+						<option value="13-15">Middle School (Age 13-15)</option>
+						<option value="16-18">High School (Age 16 - 18)</option>
+						<option value="Higher">Higher-Ed</option>
+						<option value="Professional">Business Professional</option>
+						<option value="All Age under 18">All Age under 18</option>
+						<option value="">Show All</option>
+						</select>
+				</div>
+				<div class="form-group">
+					<label>Subject: </label>
+					<select data-filter="subject" class="filter-subject filter form-control">
+						<option value="">Select Subject</option>
+	    				<option value="English">English</option>
+						<option value="Mathematics">Mathematics</option>
+						<option value="Physics">Physics</option>
+						<option value="Chemisty">Chemisty</option>
+						<option value="Biology">Biology</option>
+						<option value="History">History</option>
+						<option value="Music">Music</option>
+						<option value="Art">Art</option>
+						<option value="Others">Others</option>
+						<option value="">Show All</option>
+					</select>
+				</div>
+
+				<label>Class Size</label>
+				<div class="form-group">
+					<ul class="list-group">
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="classSize" type="checkbox" value=10 class="filter-classSize filter">Less than 10
+								</label>
+							</div>
+						</li>
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="classSize" type="checkbox" value=35 class="filter-classSize filter">11 to 35
+								</label>
+							</div>
+						</li>
+
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="classSize" type="checkbox" value=50 class="filter-classSize filter">36 to 50
+								</label>
+							</div>
+						</li>
+
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="classSize" type="checkbox" value=51 class="filter-classSize filter">More than 50
+								</label>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+				<label>School Type</label>
+				<div class="form-group">
+					<ul class="list-group">
+						<li class="list-group-item check-filter">
+							<div class="checkbox">
+								<label>
+									<input data-filter="schoolType" type="checkbox" value="Public School" class="filter-schoolType filter">Public School
+								</label>
+							</div>
+						</li>
+					<li class="list-group-item check-filter">
+						<div class="checkbox" >
+							<label>
+							<input data-filter="schoolType" type="checkbox" value="Private School" class="filter-schoolType filter">Private School
+							</label>
+
+						</div>
+					</li>
+					<li class="list-group-item check-filter">
+						<div class="checkbox"  >
+							<label>
+								<input data-filter="schoolType" type="checkbox" value="Private Language Institute" class="filter-schoolType filter">Private Language Institute
+							</label>
+						</div>
+					</li>
+					<li class="list-group-item check-filter">
+						<div class="checkbox"  >
+							<label>
+								<input data-filter="schoolType" type="checkbox" value="University" class="filter-schoolType filter">University
+							</label>
+						</div>
+					</li>
+					<li class="list-group-item check-filter">
+						<div class="checkbox"  >
+							<label>
+								<input data-filter="schoolType" type="checkbox" value="International School" class="filter-schoolType filter">International School
+							</label>
+						</div>
+					</li>
+					</ul>
+				</div>
+				</form>
+		</div>
+
+		<!-- Job List -->
+		<div class="col-lg-9 col-sm-8">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<form class="form-inline">
+					<div class="form-group">
+						<label for="sort">SORT BY</label>
+						<select class="form-control" name="sort" id="sortFilter">
+							<option value="postDate">Post Date (Newest) </option>
+							<option value="startDate">Start Date</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+			<ul id="job-list" style="padding-left: 0px;">
+
+			</ul>
+
+			<nav aria-label="Page navigation">
+			  <ul class="pagination" id="pagination">
+			  </ul>
+			</nav>
+		</div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var filtersObject = {};
+
+	//on filter change
+	$(".filter").on("change",function() {
+		var filterName = $(this).data("filter"),
+			filterVal = $(this).val();
+	
+		if (filterVal == "") {
+			delete filtersObject[filterName];
+		} else {
+			filtersObject[filterName] = filterVal;
+		}
+		
+		var filters = "";
+		
+		for (var key in filtersObject) {
+		  	if (filtersObject.hasOwnProperty(key)) {
+				filters += "[data-"+key+"='"+filtersObject[key]+"']";
+		 	 }
+		}
+		
+		if (filters == "") {
+			$(".searchresult").removeClass('hidden');
+		} else {
+			$(".searchresult").addClass('hidden');
+			$(".searchresult").addClass('hidden').filter(filters).removeClass('hidden');
+		}
+	});
+
+	//checkbox filter
+	$("input[type='checkbox']").on("change",function() {
+	var filterName = $(this).data("filter"),
+		filterVal = $("input[type='checkbox']:checked").val();
+		console.log(filterVal);
+
+	if (filterVal == ""|| filterVal==undefined) {
+		delete filtersObject[filterName];
+	} else {
+		filtersObject[filterName] = filterVal;
+	}
+	
+	var filters = "";
+	
+	for (var key in filtersObject) {
+	  	if (filtersObject.hasOwnProperty(key)) {
+			filters += "[data-"+key+"='"+filtersObject[key]+"']";
+	 	 }
+	}
+	
+	if (filters == "") {
+		$(".searchresult").removeClass('hidden');
+	} else {
+		$(".searchresult").addClass('hidden');
+		$(".searchresult").addClass('hidden').filter(filters).removeClass('hidden');
+	}
+});
+
+
+	//on search form submit
+	$("#search-form").submit(function(e) {
+		e.preventDefault();
+		var query = $("#localSearch").val().toLowerCase();
+
+		$(".searchresult").addClass('hidden');
+		$(".searchresult").each(function() {
+			
+			var position = $(this).data('position').toLowerCase();
+			var city = $(this).data("city").toLowerCase(),
+				grade = $(this).data("grade").toLowerCase(),
+				// jobType = $(this).data("jobType").toLowerCase(),
+				subject=$(this).data("subject").toLowerCase();
+				
+			if (position.indexOf(query)> -1 || city.indexOf(query) > -1 || grade.indexOf(query) > -1 || subject.indexOf(query) > -1) {
+			$(this).removeClass('hidden');
+			}
+		});
+	});
+
+
+
+});
+
+</script>

@@ -1,0 +1,470 @@
+<link rel="stylesheet" type="text/css" href="css/css/preference.css">
+<link rel="stylesheet" type="text/css" href="css/css/email.css">
+<div class="container mt20">
+<div class="col-md-8 col-md-offset-2 col-sm-12">
+	<form id="application-form">
+		<ul id="progressbar">
+			<li class="active">Basic Information</li>
+			<li>Teaching Background</li>
+			<li>Teaching Preference</li>
+			<li>Detailed Questions</li> 
+		</ul>
+
+		<fieldset id="basic-information">
+			<h4 class="fs-title"><i class="fa fa-address-card" aria-hidden="true"></i> Basic Information</h4>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group email has-feedback">
+						<label class="sr-only control-label" for="email">Email*</label>
+						<input type="email" name="email" class="form-control" id="inputEmail" required placeholder="Email">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<div class="form-group">
+						<label class="sr-only control-label" for="phone">Contact Phone</label>
+						<div class="input-group">
+							<span class="input-group-addon">+</span>
+							<input type="text" name="phone" class="form-control" placeholder="Contact phone (Include area code)"/>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<div class="form-group">
+						<label class="sr-only control-label" for="skype">Skype</label>
+						<input type="text" name="skype" class="form-control" placeholder="Skype account">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="sr-only" for="fname">First Name*</label>
+						<input type="text" name="fname" class="form-control" placeholder="First Name *" required>
+					</div>
+				
+				</div>
+				<!-- <div class="col-md-4 col-xs-12">
+					<div class="form-group"> -->
+						<!-- <label class="sr-only" for="fname">Middle Name</label> -->
+						<input type="hidden" name="mname" class="form-control">
+					<!-- </div>
+				</div> -->
+
+
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="sr-only" for="lname">Last Name*</label>
+						<input type="text" name="lname" class="form-control" required placeholder="Last Name *">
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label class="sr-only" for="gender">Gender *</label>
+						<select class="form-control" name="gender" required>
+							<option value="">Gender*</option>
+							<option value="unknown">Decline to Self Identify</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label class="sr-only">Year of Birth (YYYY) *</label>
+						<input type="number" name="birth" class="form-control" placeholder="Year of Birth (YYYY) *" required min="1900" max="2050">
+					</div>
+					
+				</div>
+
+			</div>
+		
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label for="nationality">Nationality *</label>
+						<select name="nationality" class="form-control select-nationality" required>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label>Your earliest available date to start *</label>
+						<input  name="availableDate" id="availableDate" class="form-control date-input" data-date-format="yyyy-mm-dd" required placeholder="YYYY-MM-DD">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label>Native Language *</label>
+						<input type="text" name="language" required placeholder="English" class="form-control">
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-12">
+					<div class="form-group">
+						<label>Highest level of Education</label>
+						<select name="highestEdu" required class="form-control">
+							<option value="High-school">High-school</option>
+							<option value="Bachelor">Bachelor's</option>
+							<option value="Master">Master's</option>
+							<option value="PhD">PhD</option>
+							<option value="Others">Others</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label>When did you graduate? *</label>
+						<input type="text" name="graduateDate" required class="form-control date-input" data-date-format="yyyy-mm-dd" placeholder="YYYY-MM-DD">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label>What was your most recent degree in*? </label>
+						<input type="text" name="major" required class="form-control">
+					</div>
+					
+				</div>
+			</div>
+
+			<button type="button" id="save-basic" name="next" class="next btn btn-blue mt8" value="Next" style="width:100%">Save and Next Step</button>
+		</fieldset>
+
+	<!-- Teaching Background --> 
+		<fieldset id="teaching-background">
+
+			<h4 class="fs-title"><i class="fa fa-book" aria-hidden="true"></i> Teaching Background</h4>
+			<h5>ESL Certification?</h5>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+						<input type="text" name="certification" placeholder="Name of certification" class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<div class="form-group">
+						<div class="input-group">
+							<input type="number" name="hours" min="0" placeholder="Total hours" class="form-control">
+							<div class="input-group-addon">Hours</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-sm-6">
+					<label class="radio-inline">
+						<input type="radio" name="online" value="true">Online
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="online" value="false" id="on-site">On-site
+					</label>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<label class="checkbox-inline">
+						<input type="checkbox" name="practicum" id="practicum" disabled>Practium
+					</label>
+				</div>
+			</div>
+
+			<h5>Teaching License*</h5>
+			<div class="row">
+				<div class="form-group">
+				<label for="license">Do you have an official teaching license?</label>
+				<select class="form-control" required name="license">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</select>
+				</div>
+			</div>
+			
+			<h5>Total amount of teaching experience*</h5>
+			<div class="row">
+				<div class="form-group">
+					<label for="experience">ESL or non-ESL experience, indicate if completed during your degree or post-degree</label>
+					<textarea class="form-control" required name="experience"></textarea>
+				</div>
+			</div>
+					
+				
+			<button type="button" name="previous" class="btn btn-blue previous action-button mt8" value="Previous">Previous</button>
+
+			<button type="button" name="next" class="next btn btn-blue mt8" value="Next" id="save-teaching"> Next</button>
+
+		</fieldset>
+
+
+	<!--teaching-preference -->
+		<fieldset id="teaching-preference">
+			<h4 class="fs-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Teaching Preference</h4>
+
+			<div class="col-xs-12">
+				<h5>What age group would you prefer to teach? </h5>
+				<ul class="preference-list age-list">
+					<li class="preference-list-item">
+						<label for='0-6'><input type="checkbox" id="0-6" class="age-group" >Pre-K+ (Age 0-6)</label>
+					</li>
+						
+					<li class="preference-list-item">
+						<label for='7-12' ><input type="checkbox" id="7-12" class="age-group" >Elementary School (Age 7-12)</label>
+					</li>
+					
+					<li class="preference-list-item">
+						<label for='13-15'><input type="checkbox" id="13-15" class="age-group" >Middle School (Age 13-15)</label>
+					</li>
+					<li class="preference-list-item">
+						<label for='16-18'><input type="checkbox" id="16-18" class="age-group" >High School (Age 16 - 18)</label>
+					</li>
+					<li class="preference-list-item">
+						<label for='Higher'><input type="checkbox" id="Higher-Ed" class="age-group" >Higher-Ed</label>
+					</li>
+					
+					<li class="preference-list-item">
+						<label for='Professional'><input type="checkbox" id="Professional" class="age-group" >Business Professional</label>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-xs-12">
+				<h5>If you are able to teach subjects other than English, please state them.</h5>
+				<ul class="preference-list pills checked-subject-list">
+					<li class="preference-list-item checked-pill subjects">
+                        <button class="btn-pill"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span class="pill-text checked-subject">English</span>
+                        </button>
+                    </li>
+				</ul>
+
+				<p class="text-muted">Suggested subjects</p>
+				<ul class="preference-list pills unchecked-subject-list">
+				</ul>
+			</div>
+			<button type="button" name="previous" class="btn btn-blue previous action-button mt8" value="Previous">Previous</button>
+
+			<button type="button" name="next" class="next btn btn-blue mt8" value="Next" id="save-preference"> Next</button>
+		</fieldset>
+
+	<!-- Detailed Information -->
+
+		<fieldset id="detailed">
+			<h4 class="fs-title"><i class="fa fa-certificate" aria-hidden="true"></i> Detailed Questions</h4>
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label>Do you currently hold an unexpired Z-visa (Chinese working visa)? *</label>
+						<select name="visa" class="form-control" required>
+							<option value="true">Yes</option>
+							<option value="false">No</option>
+						</select>
+					</div>
+				</div>
+			
+				<label>What is your expected monthly salary range? (include benefits) *</label>
+				<div class="form-group">
+					<div class="col-sm-5 col-xs-12">
+						<div class="input-group">
+							<input type="number" name="salaryMin" id="salaryMin" class="form-control" required>
+							<span class="input-group-addon">RMB/Month</span>
+						</div>				
+					</div>
+					<div class="col-sm-2 col-sm-12">
+						<p class="text-center">to</p>
+					</div>
+					<div class="col-sm-5 col-xs-12">
+						<div class="input-group">
+							<input type="number" name="salaryMax" id="salaryMax" class="form-control greaterThan" data-min="salaryMin" required>
+							<span class="input-group-addon">RMB/Month</span>
+						</div>				
+					</div>
+				</div>
+			
+
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label>Preferred location in China?</label>
+					<ul class="preference-list pills checked-location-list">
+					</ul>
+					<p class="text-muted">Suggested popular cities in China</p>
+					<ul class="preference-list pills unchecked-location-list">
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label>Will you be relocating by yourself or with family? *</label>
+					<select class="form-control" name="family" id="family-question">
+						<option value="false">Individually</option>
+						<option value="true">With Family</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-12 hidden" id="spouse-question">
+				<div class="form-group">
+					<label>Will your spouse be seeking employment in China?</label>
+					<select class="form-control" name="spouse">
+						<option value="no" selected>No</option>
+						<option value="yes">Yes</option>
+						<option value="maybe">Maybe</option>
+					</select>
+				</div>
+			</div>
+
+			<button type="button" name="previous" class="btn btn-blue previous action-button mt8" value="Previous">Previous</button>
+
+			<button type="button" class="next btn btn-blue mt8" id="save-detailed">Submit</button>
+			
+		</fieldset>							
+	</form>
+</div>
+</div>
+
+<script type="text/javascript">
+		
+	$(document).ready(function() {
+
+	var current_fs, next_fs, previous_fs; //fieldsets
+	var left, opacity, scale; //fieldset properties which we will animate
+	var animating; //flag to prevent quick multi-click glitches
+
+
+	$(".next").click(function(){
+		var form = $('#application-form');
+		form.validate({
+			errorElement: 'span',
+			errorClass: 'help-block',
+			highlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').addClass("has-error");
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').removeClass("has-error");
+			},
+			rules: {
+				fname:{
+					required: true,
+					maxlength:30
+				},
+				lname:{
+					required: true,
+					maxlength: 30,
+				},
+				phone:{
+					digits: true
+				},
+				
+				birth: {
+					required: true,
+					digits: true,
+                    rangelength: [4, 4]
+				},
+				certification:{
+					maxlength: 100
+				},
+				experience:{
+					required:true,
+					maxlength: 1000
+				}
+				
+			},
+
+			messages:{
+				fname:{
+					required: "First Name is required."
+				},
+				lname:{
+					required:"Last Name is required."
+				},
+				gender:{
+					required:"Please select."
+				},
+				birth:{
+					rangelength: "Please enter 4 digits year."
+				},
+			}
+		});
+       
+
+
+	if (form.valid() === true) {
+		if(animating) return false;
+		animating = true;
+		
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next();
+		
+		//activate next step on progressbar using the index of next_fs
+		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+		
+		//show the next fieldset
+		next_fs.show(); 
+		//hide the current fieldset with style
+		current_fs.animate({opacity: 0}, {
+			step: function(now, mx) {
+				//as the opacity of current_fs reduces to 0 - stored in "now"
+				//1. scale current_fs down to 80%
+				scale = 1 - (1 - now) * 0.2;
+				//2. bring next_fs from the right(50%)
+				left = (now * 50)+"%";
+				//3. increase opacity of next_fs to 1 as it moves in
+				opacity = 1 - now;
+				current_fs.css({'transform': 'scale('+scale+')'});
+				next_fs.css({'left': left, 'opacity': opacity});
+			}, 
+			duration: 800, 
+			complete: function(){
+				current_fs.hide();
+				animating = false;
+			}, 
+			//this comes from the custom easing plugin
+			easing: 'easeInOutBack'
+		});
+	}
+	});
+	$(".previous").click(function(){
+		if(animating) return false;
+		animating = true;
+		
+		current_fs = $(this).parent();
+		previous_fs = $(this).parent().prev();
+		
+		//de-activate current step on progressbar
+		$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+		
+		//show the previous fieldset
+		previous_fs.show(); 
+		//hide the current fieldset with style
+		current_fs.animate({opacity: 0}, {
+			step: function(now, mx) {
+				//as the opacity of current_fs reduces to 0 - stored in "now"
+				//1. scale previous_fs from 80% to 100%
+				scale = 0.8 + (1 - now) * 0.2;
+				//2. take current_fs to the right(50%) - from 0%
+				left = ((1-now) * 50)+"%";
+				//3. increase opacity of previous_fs to 1 as it moves in
+				opacity = 1 - now;
+				current_fs.css({'left': left});
+				previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+			}, 
+			duration: 800, 
+			complete: function(){
+				current_fs.hide();
+				animating = false;
+			}, 
+			//this comes from the custom easing plugin
+			easing: 'easeInOutBack'
+		});
+	});
+	});
+</script>

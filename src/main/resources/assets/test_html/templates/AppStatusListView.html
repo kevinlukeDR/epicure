@@ -1,0 +1,6 @@
+<h4><a href="#jobs/<%= applystatus.job_id %>"><%= jobDetails.position %></a></h4>
+<p><strong>Status: </strong> <%= applystatus.status %></p>
+<p><strong>Applied on: </strong> 
+<% var d = new Date(applystatus.applyDate);
+	print(d.toLocaleString());
+%></p>

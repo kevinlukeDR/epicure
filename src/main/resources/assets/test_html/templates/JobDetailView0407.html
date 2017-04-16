@@ -1,0 +1,423 @@
+<!-- <header class="intro-header" style="background-image: url('img/job-bg.jpg')">
+</header> -->
+
+<div class="container mt-user">
+	
+	<input type="hidden" name="job_id" value="<%= id %>">
+	<div class="row">
+		<div class="col-md-7 col-sm-6 col-xs-12">
+			<div class="content-panel">
+
+				<h3 class="section-heading w80"><%= position %></h3>
+				<div class="social-share">
+					<div class="fb-share-button" data-href="https://www.teachoversea.com/#jobs/<%= id %>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fteachoversea.com%2F%23jobs%2F15&amp;src=sdkpreparse">Share</a></div>
+					<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+					<script type="IN/Share" data-url="https://www.teachoversea.com/#jobs/<%= id %>"></script>
+				</div>
+				
+				<h4><%= schoolName %></h4>
+				
+						<p class="text-muted">Posted by <span class="blue-text"><%= Recruiter.companyName %></span>
+							<% var d1 = new Date(postDate), d2 = new Date();
+								print(directory.diffInDays(d1,d2)); %> 
+						 days ago</p>
+				
+				<div class="favp">
+					
+					<!-- Save job button -->
+                        <i class="fa fa-heart fa-lg fa-right" aria-hidden="true" data-toggle="popover" data-placement="bottom" data-content="Saved!" id="tosave"></i>
+                </div>
+
+				<p><i class="fa fa-map-pin" aria-hidden="true"></i><%= city %>, China</p>
+				<p><i class="fa fa-graduation-cap" aria-hidden="true"></i> <% 
+				switch(grade){
+				case('0-6'):
+					print('Pre-K+ (Age 0-5)');
+					break;
+				case('7-12'):
+					print('Elementary School (Age 6-12)');
+					break;
+				case('13-15'):
+					print('Middle School (Age 13-15)');
+					break;
+				case('16-18'):
+					print('High School (Age 16 - 18)');
+					break;
+				case('Higher'):
+					print('Higher-Ed');
+					break;
+				case('Professional'):
+					print('Business Professional');
+					break;
+				case('All Age under 18'):
+					print('All Age under 18');
+					break;
+				}%>, <%= schoolType %></p>
+				<p><i class="fa fa-calendar" aria-hidden="true"></i>
+				Start from <% var d = new Date(startDate),
+					fragments = [
+					d.getMonth()+1,
+					d.getDate(),
+					d.getFullYear()
+					];
+					print(fragments.join('-'));
+				 %></p>
+				<p><i class="fa fa-clock-o" aria-hidden="true"></i><%= contractLen %> Months Contract Length</p>
+				<p><i class="fa fa-jpy" aria-hidden="true"></i>
+					Around <% if(salaryMin == salaryMax){ %>
+						<%= salaryMax %>
+						<% }else{ %>
+							<%= salaryMin %> to  <%= salaryMax %>
+						<% } %>
+					RMB per month</p>
+					
+				<p><i class="fa fa-certificate" aria-hidden="true"></i>Candidates should be Licensed Teacher</p>
+			</div>
+		</div>
+
+		<div class="col-md-5 col-sm-6 col-xs-12">
+			<div class="school-album" style="margin: auto;">
+			
+				<% if (schoolPics.length > 0) {%>
+				<img class="img-responsive" src="https://s3.us-east-2.amazonaws.com/esl-public/<%= schoolPics[0].path %>" >
+				<% } %>
+			</div>
+		</div>
+	</div>
+
+		<!--  <div class="clearfix visible-xs-block"></div> -->
+	<div class="row">
+		<div class="col-md-7 col-sm-6 col-xs-12" style="padding: 0px;">
+		<!-- Job Details -->
+			<div class="col-xs-12">
+				<div class="panel panel-default content-panel">
+					<div class="section-heading "><h4 class="section-heading blue-text"><i class="fa fa-bars" aria-hidden="true"></i>Job Details</h4></div>
+					<div class="panel-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<th scope="row">City:</th>
+									<td><%= city %></td>
+								</tr>
+								<tr>
+									<th scope="row">Job Type: </th>
+									<td><%= jobType %></td>
+								</tr>
+								<tr>
+									<th scope="row">Class Size: </th>
+									<% if(classSize == 10){ %>
+										<td>Less than 10</td>
+									<% }else if(classSize ==35) { %>
+										<td>11 to 35</td>
+									<% }else if(classSize ==50) { %>
+										<td>36 to 50</td>
+									<% }else if(classSize ==51){ %>
+									<td>More than 50</td>
+									<% } %>
+									
+								</tr>
+								<tr>
+									<th scope="row">Contract Length:</th>
+									<td><%= contractLen %> months</td>
+								</tr>
+								<tr>
+									<th scope="row">Eligible Candidate: </th>
+									<td>Licensed Teacher</td>
+								</tr>
+								<tr>
+									<th scope="row">Subject:</th>
+									<td><%= subject %></td>
+								</tr>
+								<tr>
+									<th scope="row">Grade:</th>
+									<td><% switch(grade){
+										case('0-6'):
+											print('Pre-K+ (Age 0-5)');
+											break;
+										case('7-12'):
+											print('Elementary School (Age 6-12)');
+											break;
+										case('13-15'):
+											print('Middle School (Age 13-15)');
+											break;
+										case('16-18'):
+											print('High School (Age 16 - 18)');
+											break;
+										case('Higher'):
+											print('Higher-Ed');
+											break;
+										case('Professional'):
+											print('Business Professional');
+											break;
+										}%></td>
+								</tr>
+								<tr>
+									<th scope="row">Start Date:</th>
+									<td><% var d = new Date(startDate),
+										fragments = [
+										d.getMonth()+1,
+										d.getDate(),
+										d.getFullYear()
+										];
+										print(fragments.join('-')); 
+										%></td>
+								</tr>
+							</tbody>
+						</table>
+						<h4 class="section-heading blue-text">About <%= schoolName %></h4>
+						<p><%= aboutSchool %></p>
+					</div>
+				</div>
+			</div>
+			<!-- Qualifications -->
+			<div class="col-xs-12">
+				<div class="content-panel panel panel-default">
+					<div class="section-heading "><h4 class="section-heading blue-text"><i class="fa fa-certificate" aria-hidden="true"></i>Qualification and Requirements</h4></div>
+					<div class="panel-body">
+						<table class="table job-detail-table">
+							<tbody>
+							<span class="show-more-button" id="showMore">
+								<i class="fa fa-angle-double-down" aria-hidden="true"></i>Show More
+							</span>
+							<tr>
+								<th scope="row">Native English Speaker:</th>
+								<td>
+								<% if (nativeSpeaker){
+									print("Yes")
+								}else{
+									print("Not necessary")
+								} %>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Required Certificates:</th>
+								<td><%= certificates %></td>
+							</tr>
+
+							
+							<tr class="show-more hidden">
+								<th scope="row">Education Required:</th>
+								<td><%= education %></td>
+							</tr>
+
+							<tr class="show-more hidden">
+								<th scope="row">Minimal Teaching Experience </th>
+								<td><%
+								switch(experience){
+									case(0):
+										print('None');
+										break;
+									case(1):
+										print('Less than 1 Year');
+										break;
+									case(2):
+										print('1 to 2 years');
+										break;
+									case(3):
+										print('3 to 5 years');
+										break;
+									case(5):
+										print('More than 5 years');
+										break;
+									}
+									%>
+								</td>
+							</tr>
+							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- Job Benefits -->
+			<div class="col-xs-12">
+				<div class="content-panel panel panel-default">
+					<div class="section-heading "><h4 class="section-heading blue-text"><i class="fa fa-jpy" aria-hidden="true"></i>Job Benefits</h4></div>
+					<div class="panel-body">
+						<table class="table job-detail-table">
+
+							<tbody>
+							<span class="show-more-button" id="showMore">
+								<i class="fa fa-angle-double-down" aria-hidden="true"></i>Show More
+							</span>
+								<tr>
+									<th scope="row">Salary:</th>
+									<td>Around <% if(salaryMin == salaryMax){ %>
+										<%= salaryMax %>
+										<% }else{ %>
+											<%= salaryMin %> to  <%= salaryMax %>
+										<% } %>
+						 RMB per month</td>
+								</tr>
+								
+								<%
+								if (accommodation)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Accomodation: </th>
+									<td><%= accommodation %></td>
+								</tr>
+								<%
+								}
+								%>
+
+								<%
+								if (airfare)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Airfare </th>
+									<td><%= airfare %></td>
+								</tr>
+								<%
+								}
+								%>
+
+								<%
+								if (weeklyRestDay)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Weekly rest day: </th>
+									<td><%= weeklyRestDay %></td>
+								</tr>
+
+								<%
+								}
+								%>
+
+								<%
+								if (vacation)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Winter/Summer Vacation:</th>
+									<td><%= vacation %></td>
+								</tr>
+
+								<%
+								}
+								%>
+
+								<%
+								if (annualLeave)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Annual Leave</th>
+									<td><%= annualLeave %></td>
+								</tr>
+								<%
+								}
+								%>
+
+								<%
+								if (bonus)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Bonus for continuing contract:</th>
+									<td><%= bonus %></td>
+								</tr>
+								<%
+								}
+								%>
+
+								<%
+								if (lunch)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Lunch:</th>
+									<td>Included</td>
+								</tr>
+								<%
+								}
+								%>
+								<%
+								if (chinese)
+								{
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Chinese Class:</th>
+									<td>Included</td>
+								</tr>
+								<%
+								}
+								%>
+								<tr class="show-more hidden">
+									<th scope="row">Additonal Information:</th>
+									<td><%= additional %></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-5 col-sm-6 col-xs-12">
+			<div id="stay-on-page">
+				
+				<div class="col-xs-12 text-center">
+					<div class="mb10" id="button-wrapper">
+							<button type="button" class="btn btn-lg btn-pink" id="applyButton" style="width: 100%">Apply Now</button>
+							<!-- <button type="button" class="btn btn-lg btn-pink-inverse" id="one-click" style="width: 32.5%">One Click</button> -->
+							<!-- <button type="button" class="btn  btn-lg btn-blue" style="width: 32.6%">Not Interested</button> -->
+								
+					</div>
+				</div>
+				<div class="col-xs-12" id="apply-content">
+					
+				</div>
+
+				<div class="col-xs-12">
+					<!-- View Similar jobs-->
+					<div class="content-panel panel panel-default" >
+						<div class="section-heading "><h4 class="section-heading pink-text">View Similar Jobs</h4></div>
+						<div class="panel-body">
+
+							<ul id="similar-job" style="padding-left: 0px;">
+								<!--  -->
+							</ul>
+							<div class="alert alert-info no-similar hidden">
+								Sorry, this job currently has no similar jobs.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+<div id="fb-root"></div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+   (function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+        $('#to-save').popover({
+            delay:{
+                show:500,
+                hide:100
+            }
+        });
+
+        //  $('.fa-heart').click(function(){
+        //     setTimeout(function () {
+        //     $('.popover').fadeOut('slow');
+        //     }, 3000);
+        // });
+    });
+    
+</script>

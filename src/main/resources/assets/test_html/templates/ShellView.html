@@ -1,0 +1,126 @@
+<link rel="stylesheet" type="text/css" href="css/css/user.css">
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">
+               
+                <img src="img/logo_blue.png" class="hidden-xs img-responsive" alt="teachOversea-logo">
+                <img src="img/logo_blue_xs.png" class="visible-xs img-responsive" alt="teachOversea-logo">
+            </a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="top-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="home-menu active"><a href="">Home</a></li>
+                <li class="job-menu"><a href="#search/%3Fposition%3D%26city%3D%26subject%3D%26grade%3D">Job Board</a></li>
+                <li class="tefl-menu"><a href="#TEFL">TEFL Certification</a></li>
+                <li class="life-menu"><a href="#life">Life In China</a></li>
+                
+                <li class="about-menu"><a href="#about">About Us</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="remove-after">
+                
+                <li class="nav-right nav-right-pink"><a href="#recruiterLogin">Recruiter</a></li>
+                <li class="nav-right"><a href="#login" class="pink">Login</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            
+                <form action="" method="get" class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="position" placeholder="Looking for..." id="search">
+                    </div>
+                    <button type="submit" class="btn btn-blue" id="searchnow"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </form>
+             </ul>  
+            
+        </div>
+
+        
+    </div>
+</nav>
+
+<nav id="second-nav" class="navbar navbar-inverse navbar-fixed-top navbar-secondary hidden">
+</nav>
+
+<div class="wrapper container-fluid hidden" id="sidebar-content" style="padding-left: 0px;"></div>
+<div id="content">
+</div>
+<!-- Feedback button -->
+
+<div id="slide-panel" class="slide-panel">
+    <input type="checkbox" id="checker" type="button" class="feedback-btn" value="feedback">
+    <label for="checker" class="slide-panel-tab">Feedback</label>
+    <div class="slide-panel-content">
+        <div data-area="input">
+            <h4>Feedback:</h4>
+            <p class="text-muted">Share your ideas, ask a question or provide any other feedbacks.</p>
+            <form id="feedback-side-form">
+                <div class="content">
+                <select class="form-control" id="feedback-select">
+                    <option value="website">Website layout/design</option>
+                    <option value="application">Application process</option>
+                    <option value="general">General/Other</option>
+                </select>
+
+                <label for="textarea" class="feedback-textarea"></label>
+                <textarea cols="35" rows="8" name="reason" id="textarea" class="form-control" required></textarea>
+            </div>
+                <button class="btn btn-blue mt10" id="submit-feedback-side">Submit</button>
+            </form>
+            <div class="alert alert-success mt10" id="side-feedback-success" style="display: none">Thank you for your feedback!</div>
+            
+            
+        </div>
+    </div><!-- close: slide-inner -->
+</div><!-- close: slide-panel-content -->
+
+<footer>
+    <div class="container-fluid">
+        <div class="row footer-inner">
+            <div class="col-sm-4 col-xs-12 text-center mb4">
+                <!-- <div class="col-xs-6"> -->
+                     <a href="#about">About us</a>
+                <!-- </div> -->
+               <!--  <div class="col-xs-6">
+                    
+                </div> -->
+            </div>
+            <div class="col-sm-4 col-xs-12 text-center mb4">
+            <!-- <a href="#mailto: contact@teachoversea.com"></a> -->
+            <a href="#contact">Contact us</a>
+               <!--  <div class="col-xs-6"> -->
+                   <!--  <a href="#term">Term of use</a> -->
+                <!-- </div>
+
+                <div class="col-xs-6"> -->
+                    <!-- <a href="#Privacy Policy">Privacy Policy</a> -->
+                <!-- </div> -->
+            </div>
+            
+            <!-- Social Media -->
+            <div class="col-sm-4 text-center mb4">
+                <a href="https://www.linkedin.com/company-beta/17935197/" target="_blank" class="m2 mr20">
+                    <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/hilandtalentteachoversea" target="_blank" class="m2 mr20">
+                <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://twitter.com/WeTeachOversea" target="_blank" class="m2 mr20"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+
+
+            </div>
+            <div class="clearfix visible-xs-block"></div>
+            <div class="col-xs-12 text-center"><p class="text-muted">Powered by Hiland Talent, Inc. All rights reserved.</p></div>
+        </div>
+    </div>
+
+</footer>

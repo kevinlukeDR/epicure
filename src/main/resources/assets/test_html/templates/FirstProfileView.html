@@ -1,0 +1,418 @@
+<div class="container mt20" style="width: 600px;">
+<form id="update-profile-form">
+	<ul id="progressbar">
+		<li class="active">Basic Information</li>
+		<li>Experience</li>
+		<li>Education</li>
+		<li>Certifications</li> 
+	</ul>
+
+	<fieldset id="personal-information">
+		<h4 class="fs-title"><i class="fa fa-address-card" aria-hidden="true"></i> Basic Information</h4>
+		<input type="hidden" name="id" value="<%= id %>">
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="sr-only" for="fname">First Name</label>
+					<input type="text" name="fname" class="form-control" value="<%= fname %>"  placeholder="First Name" required>
+				</div>
+			
+			</div>
+
+
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="sr-only" for="lname">Last Name</label>
+					<input type="text" name="lname" value="<%= lname %>" class="form-control" required placeholder="Last Name">
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="sr-only" for="gender">Gender</label>
+					<select class="form-control" name="gender" required>
+						<option value="">Gender</option>
+						<option value="unknown">Decline to Self Identify</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="form-group">
+					<label class="sr-only" for="nationality">Nationality</label>
+					<select name="nationality" class="form-control select-nationality" required>
+					</select>
+				</div>
+			</div>
+
+		</div>
+		
+
+	
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+					<label>Year of Birth</label>
+					<input type="number" name="birth" class="form-control" min="1900" max="2050" step="1">
+					</div>
+			</div>
+
+			<div class="col-sm-6 col-xs-12">
+				<div class="form-group">
+					<label>How soon can you start?*</label>
+					<input  name="availableDate" id="availableDate" class="form-control date-input" data-date-format="yyyy-mm-dd">
+					</div>
+				</div>
+		</div>
+
+		
+
+		<!-- <div class="col-xs-12">
+			<div class="form-group">
+			<label class="sr-only" for="personalWebsite">Personal Website</label>
+			<input class="form-control" type="url" name="personalWebsite" placeholder="Personal Website">
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+			<label class="sr-only" for="personalWebsite">Linkedin</label>
+			<input class="form-control" type="url" name="linkedin" placeholder="Linkedin">
+			</div>					
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+			<label class="sr-only" for="twitter">Twitter</label>
+			<input class="form-control" type="url" name="twitter" placeholder="Twitter">
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+			<label class="sr-only" for="facebook">Facebook</label>
+			<input class="form-control" type="url" name="facebook" placeholder="Facebook">
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="sr-only" for="instagram">Instagram</label>
+				<input class="form-control" type="url" name="instagram" placeholder="Instagram">
+			</div>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="sr-only" for="wechat">Wechat</label>
+				<input class="form-control" type="url" name="wechat" placeholder="Wechat">
+			</div>
+		</div> -->
+		<button type="button" id="basic-button" name="next" class="next btn btn-blue mt8" value="Next" style="width:100%">Save and Next Step</button>
+		<a class="text-muted" href="" style="width: 100%">Skip now</a>
+	</fieldset>
+
+<!-- Experience --> 
+	<fieldset id="experience">
+
+		<h4 class="fs-title"><i class="fa fa-book" aria-hidden="true"></i>Most Recent Teaching Experience</h4>
+			<div id="placeholder-exp">
+
+				<!-- <input type="hidden" name="relaventExperiences[0][id]" value=""> -->
+				<div class="col-sm-12">
+					<div class="form-group">
+						<input type="text" name="role" class="form-control" placeholder="Title" required>
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<div class="form-group">
+					<input type="text" name="company" class="form-control" placeholder="Company"  required>
+					</div>
+				</div>
+
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="fromDate">Start Date</label>
+						<input  name="fromDate" id="fromDate" class="form-control date-input"  required data-date-format="yyyy-mm-dd">
+					</div>
+				</div>
+
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label for="toDate">End Date</label>
+						<input name="toDate" id="toDate" class="form-control date-input"  required data-date-format="yyyy-mm-dd">
+					</div>
+				</div>
+
+				<div class="col-xs-12">
+					<div class="form-group">
+						<label>Summary</label>
+						<textarea rows="4" name="responsibility" id="responsibility" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<!-- <button type="button" class="btn btn-default mt8" id="addExp">Add Experience</button> -->
+
+			<button type="button" name="next" class="next btn btn-blue mt8" value="Next" id="saveExp" style="width:100%">Save and Next Step</button>
+			<a class="text-muted" href="" style="width: 100%">Skip now</a>
+	</fieldset>
+
+
+<!-- Education -->
+	<fieldset id="education">
+		<h4 class="fs-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Highest Education</h4>
+		<!-- <input type="hidden" name="educationExperiences[0][id]" value=""> -->
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<select class="form-control" name="degree" required>
+					<option value="">Degree</option>
+					<option value="Bachelor Degree">Bachelor's Degree</option>
+					<option value="Master Degree">Master's Degree</option>
+					<option value="Doctoral's Degree">Doctoral's Degree</option>
+					<option value="Others">Others</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<input type="text" name="field" class="form-control" required placeholder="Major">
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="fromDate">Start Date</label>
+				<input name="fromDate" id="from-date" class="form-control date-input" required data-date-format="yyyy-mm-dd">
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+		<div class="form-group">
+			<label for="toDate">End Date</label>
+			<input  name="toDate" id="to-date" class="form-control date-input" required data-date-format="yyyy-mm-dd">
+		</div>
+		</div>
+
+		<div class="col-sm-12">
+			<div class="form-group">
+				<input type="text" name="school" class="form-control" required placeholder="School">
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<select name="country" class="form-control select-country" required>
+					<option value="United States(USA)" selected="selected">United States(USA)</option>
+				</select>
+				<!-- <input type="text" name="educationExperiences[0][country]"  class="form-control" required
+				placeholder="Country"> -->
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<input type="text" name="city"  class="form-control" required placeholder="City">
+			</div>
+		</div>
+
+		<!-- <button type="button" class="btn btn-default mt8" id="addEdu">Add Education</button> -->
+		
+		<button type="button" name="next" class="next btn btn-blue mt8" value="Next" id="saveEdu" style="width:100%">Save and Next Step</button>
+		<a class="text-muted" href="" style="width: 100%">Skip now</a>
+	</fieldset>
+
+<!-- Certification -->
+
+	<fieldset id="certification">
+		<h4 class="fs-title"><i class="fa fa-certificate" aria-hidden="true"></i> Certification</h4>
+		<!-- <input type="hidden" name="certifications[0][id]" value=""> -->
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label class="sr-only" for="type">Certification</label>
+				<input type="text" name="type" class="form-control" placeholder="Certification" required>
+			</div>
+		</div>
+
+		<div class="col-xs-6">
+			<div class="form-group">
+			<label for="issueDate">Issue Date</label>
+			<input name="issueDate" class="form-control date-input" placeholder="Issue Date" required data-date-format="yyyy-mm-dd">
+			</div>
+		</div>
+
+		<div class="col-xs-6">
+			<div class="form-group">
+				<label for="issueBody">Issue Body</label>
+				<input type="text" name="issuingBody" class="form-control" placeholder="Issue Body" required>
+			</div>
+		</div>
+
+	<!-- 	<button type="button" class="btn btn-default mt8" id="addCert">Add Certification</button> -->
+		
+		<button type="button" id="submitBtn" class="next btn btn-blue mt8" value="Next" style="width:100%">Save and Start Exploring</button>
+		<!-- <button class="btn btn-pink btn-default mt8" type="submit" id="updateProfile">SAVE</button> -->
+	</fieldset>
+							
+</form>
+</div>
+
+
+<script type="text/javascript">
+		
+	$(document).ready(function() {
+
+	var current_fs, next_fs, previous_fs; //fieldsets
+	var left, opacity, scale; //fieldset properties which we will animate
+	var animating; //flag to prevent quick multi-click glitches
+
+
+	$(".next").click(function(){
+		var form = $('#update-profile-form');
+		form.validate({
+			errorElement: 'span',
+			errorClass: 'help-block',
+			highlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').addClass("has-error");
+			},
+			unhighlight: function(element, errorClass, validClass) {
+				$(element).closest('.form-group').removeClass("has-error");
+			},
+			rules: {
+				fname:{
+					required: true,
+					maxlength:30
+				},
+				lname:{
+					required: true,
+					maxlength: 30,
+				},
+				gender:{
+					required: true,
+				},
+				birth:{
+					digits: true,
+                    rangelength: [4, 4]
+				},
+				availableDate:{
+					required: true,
+					date: true,
+				},
+				type: {
+                    required: true,
+                    maxlength: 45
+                },
+                issuingBody: {
+                    required: true,
+                    maxlength: 45
+                },
+                issueDate:{
+                    required: true,
+                    date: true,
+                },
+                degree:{
+                    required:true,
+                    maxlength: 45
+                },
+                school:{
+                    required:true,
+                    maxlength: 45
+                },
+                country:{
+                    required:true,
+                    maxlength: 45
+                },
+                fromDate:{
+                	required:true,
+                	date: true,
+                },
+                toDate:{
+                	required:true,
+                	date: true,
+                },
+               
+                field: {
+                    required: true,
+                    maxlength: 45
+                },
+                role:{
+                    required: true,
+                    maxlength: 45,
+                },
+                company:{
+                    required: true,
+                    maxlength: 45,
+                },
+                responsibility:{
+                    required: true,
+                    maxlength: 255,
+                },
+                type:{
+                	required: true,
+                	maxlength:100
+                }
+			},
+			messages:{
+				fname:{
+					required: "First Name is required."
+				},
+				lname:{
+					required:"Last Name is required."
+				},
+				gender:{
+					required:"Please select."
+				},
+				birth:{
+					rangelength: "Please enter 4 digits year."
+				},
+				availableDate:{
+					required: "Available Date is required."
+				}
+			}
+		})
+
+
+	if (form.valid() === true) {
+
+	// $(".next").click(function(){
+		if(animating) return false;
+		animating = true;
+		
+		current_fs = $(this).parent();
+		next_fs = $(this).parent().next();
+		
+		//activate next step on progressbar using the index of next_fs
+		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+		
+		//show the next fieldset
+		next_fs.show(); 
+		//hide the current fieldset with style
+		current_fs.animate({opacity: 0}, {
+			step: function(now, mx) {
+				//as the opacity of current_fs reduces to 0 - stored in "now"
+				//1. scale current_fs down to 80%
+				scale = 1 - (1 - now) * 0.2;
+				//2. bring next_fs from the right(50%)
+				left = (now * 50)+"%";
+				//3. increase opacity of next_fs to 1 as it moves in
+				opacity = 1 - now;
+				current_fs.css({'transform': 'scale('+scale+')'});
+				next_fs.css({'left': left, 'opacity': opacity});
+			}, 
+			duration: 800, 
+			complete: function(){
+				current_fs.hide();
+				animating = false;
+			}, 
+			//this comes from the custom easing plugin
+			easing: 'easeInOutBack'
+		});
+	}
+	});
+	});
+</script>

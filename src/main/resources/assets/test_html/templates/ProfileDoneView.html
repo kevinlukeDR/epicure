@@ -1,0 +1,369 @@
+<link rel="stylesheet" type="text/css" href="css/css/social.css">
+<div class="container mt-user">
+	<div class="row">
+
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<div class="content-panel profile-content">
+				<h4 class="text-center">
+				<% if (gender == 'Male') { %>
+				<i class="fa fa-mars blue-text" aria-hidden="true"></i>
+				<% }else if (gender == 'Female'){ %>
+				<i class="fa fa-venus pink-text" aria-hidden="true"></i>
+				<% }else if(gender == 'unknown'){ %>
+				<i class="fa fa-genderless" aria-hidden="true"></i>
+				<% } %>
+				<%= fname %> <%= lname %>
+				</h4>
+				<span class="glyphicon glyphicon-edit right-glyphicon" aria-hidden="true" id="edit-basic"></span>
+
+				<!-- <div class="slim" data-ratio="1:1" data-size="106,106" data-max-file-size='2' data-service="/api/profile/profilepic" id="my-cropper">
+					<img src="https://s3.us-east-2.amazonaws.com/esl-public/<%= picture.path %>" alt=""/>
+					<input type="file" name="profilepic"/>
+				</div> -->
+
+				<div class="avatar-holder">
+				 <% if(picture == null){ %>
+				 <img alt="profile-pic" src="https://s3.us-east-2.amazonaws.com/esl-public/ProfilePicture/3ca45b94-d0e8-4f60-ad1c-d021531b5e78avatar.png" height="25" width="25" style="height:106px;width:106px;border-radius: 50%"  class="avatar-img center-block mb8"/>                 
+                <% } else{ %>
+					<img src="https://s3.us-east-2.amazonaws.com/esl-public/<%= picture.path %>" style="height:106px;width:106px;border-radius: 50%" alt="Avatar" class="avatar-img center-block mb8">
+					<% } %>
+				</div>
+				
+				<a href="javascript:" id="replaceAvatar">Replace Photo</a>
+
+				<form method="post" enctype="multipart/form-data" class="avatar hidden" id="avatar-form" >
+					<div class="slim">
+						<input type="file" name="profilepic" id="upload-avatar" data-output-base64="false" />	
+					</div>
+							
+					<button class='btn open-take-picture btn-default btn-full mt10'>Take Picture</button>
+
+					<button type="submit" id="uploadAvatar" class="btn btn-blue btn-full mt10 mb10">Submit</button>
+					
+					
+
+						<!--this is used for taking photo-->
+                     <div class="take-picture-modal"></div>
+					
+                     
+
+					
+				</form>
+				<div class="alert alert-success alert-pic mt8" style="display: none">Success!</div>
+
+				<p><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+				<%= birth %></p>
+				<p><i class="fa fa-home" aria-hidden="true"></i>
+				<%= nationality %></p>
+				<p>Available after <%= availableDate %></p>
+				<div class="edit-basic"></div>
+			</div>
+
+			<div class="content-panel profile-content">
+			<h4 class="fs-title">Social Media</h4>
+			 	<span class="glyphicon glyphicon-edit right-glyphicon" aria-hidden="true" id="edit-contact"></span>
+				<p><i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin: <a href="<%= linkedin %>" target="_blank"><%= linkedin %></a></p>
+
+				<% if (personalWebsite) { %>
+					<p><i class="fa fa-link" aria-hidden="true"></i>Personal Website: <a href="<%= personalWebsite %>" target="_blank"><%= personalWebsite %></a></p>
+				<% } %>
+
+				<% if (twitter) { %>
+					<p><i class="fa fa-twitter" aria-hidden="true"></i>Twitter: <a href="<%= twitter %>" target="_blank"><%= twitter %></a></p>
+				<% } %>
+
+				<% if (facebook) { %>
+					<p><i class="fa fa-facebook" aria-hidden="true"></i>Facebook: <a href="<%= facebook %>" target="_blank"><%= facebook %></a></p>
+				<% } %>
+
+				<% if (wechat) { %>
+					<p><i class="fa fa-weixin" aria-hidden="true"></i>Wechat: <%= wechat %></p>
+				<% } %>
+
+				<% if (instagram) { %>
+					<p><i class="fa fa-instagram" aria-hidden="true"></i>Instagram: <%= instagram %></p>
+				<% } %>
+
+				<div class="edit-contact"></div>
+				
+			</div>
+				
+		</div>
+		<!-- </div> -->
+		
+		<div class="col-md-6 col-sm-8 col-xs-12">
+			<!-- Education Panel -->
+			<div class="content-panel profile-content" id="education-panel">
+				<h4 class="fs-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h4>
+				<button class="btn btn-blue profile-add-btn" id="add-edu"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="hidden-xs"> Add Education</span></button>
+				<div id="education-content" class="mt10">
+	        		
+	        	</div>
+	        	<div class="add-edu"></div>
+				
+	        </div>
+
+
+	        <!-- Experience Panel -->
+	        <div class="content-panel profile-content" id="experience-panel">
+	        	<h4 class="fs-title"><i class="fa fa-book" aria-hidden="true"></i> Experience</h4>
+	        	<div id="experience-content" class="mt10">
+	        		<button class="btn btn-blue profile-add-btn" id="add-exp"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="hidden-xs"> Add Experience</span></button>
+	        	</div>
+	        	<div class="add-exp"></div>
+
+	        </div>
+
+	        <!-- Certification panel -->
+	        <div class="content-panel profile-content">
+	        	<h4 class="fs-title"><i class="fa fa-book" aria-hidden="true"></i> Certification</h4>
+	        	<div id="certification-content" class="mt10">
+	        		<button class="btn btn-blue profile-add-btn" id="add-Ct"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="hidden-xs"> Add Certification</span></button>
+	        	</div>
+	        	<div class="add-Ct"></div>
+	        </div>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+        	<!-- <div class="content-panel"> -->
+        		<!-- <div class="fixed-buttons editProfile mb8">
+        			<a class="btn btn-blue" style="width: 100%" href="#user/profile/edit">Edit My Profile</a>
+        		</div> -->
+        	<!-- </div> -->
+        	
+        	<!-- Profile Strength -->
+        	<div class="content-panel">
+        		<h4 class="text-center fs-title">Profile Strength</h4>
+        		<div id="profile-strength">
+				</div>
+        	</div>
+
+        	<div class="alert alert-info" role="alert">
+			<h5 class="black-text">Why should I fill out my profile?</h5>
+				<p>Having a rich profile will help you stand out from the crowd and give employers more reasons to pay attention to your job application.</p>
+				<h5 class="black-text">Is my resume private?</h5>
+				<p>Yes. Your information is not shared with anyone without your explicit consent.</p>
+		</div>
+
+        </div>
+	</div>
+</div>
+
+
+
+
+<!-- *********************-->
+<!--  Contact Info modal -->
+<!-- *********************-->
+<script type="text/template" id="edit-contact-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Social Media</h3>
+    </div>
+    <div class="bbm-modal__section">
+    	<div id="social-platforms">
+	    	<!-- <label class="btn btn-social btn-icon btn-personal" id="personalWebsite">
+	    		<input type="checkbox" autocomplete="off" class="hidden">
+	    		<i class="fa fa-link" aria-hidden="true"></i><span>Personal Website</span>
+	    	</label> -->
+	    	<a class="btn-social btn-icon btn-personal"><i class="fa fa-link" aria-hidden="true"></i><span
+	    	id="personalWebsite">Personal Website</span></a>
+	    		<input class="form-control personalWebsite hidden mb8" type="url" name="personalWebsite" placeholder="Personal Website" value="<%= personalWebsite %>">
+	    	<a class="btn-social btn-icon btn-linkedin"><i class="fa fa-linkedin"></i><span id="linkedin">LinkedIn</span></a>
+	    		<input class="form-control linkedin hidden mb8" type="url" name="linkedin" placeholder="linkedIn" value="<%= linkedin %>">
+			<a class="btn-social btn-icon btn-facebook" ><i class="fa fa-facebook"></i><span id="facebook">Facebook</span></a>
+				<input class="form-control facebook hidden mb8" type="url" name="facebook" placeholder="facebook" value="<%= facebook %>">
+
+			<a class="btn-social btn-icon btn-twitter" ><i class="fa fa-twitter"></i><span id="twitter">Twitter</span></a>
+				<input class="form-control twitter hidden mb8" type="url" name="twitter" placeholder="twitter" value="<%= twitter%>">
+			<a class="btn-social btn-icon btn-wechat"><i class="fa fa-weixin" aria-hidden="true"></i><span id="wechat">Wechat</span></a>
+				<input class="form-control wechat hidden mb8" name="wechat" placeholder="wechat" value="<%= wechat %>">
+
+			<a class="btn-social btn-icon btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i><span id="instagram">Instagram</span></a>
+				<input class="form-control instagram hidden mb8" type="url" name="instagram" placeholder="instagram" value="<%= instagram %>">
+</div>
+
+
+
+     </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+</script>
+
+
+<!-- *********************-->
+<!--  Certification modal -->
+<!-- *********************-->
+<script type="text/template" id="add-certification-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Add Certification</h3>
+    </div>
+    <div class="bbm-modal__section">
+
+		<form id="add-certification-form">
+		<div class="col-sm-6 col-xs-12"> 
+			<div class="form-group">
+				<label>Certificate Type</label>
+				<input type="text" name="type" class="form-control" required>
+			</div>
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<div class="form-group">
+				<label for="issueDate">Issue Date</label>
+				<input name="issueDate" class="form-control date-input" required data-date-format="yyyy-mm-dd">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-xs-12">
+			<div class="form-group">
+				<label for="issueBody">Issue Body</label>
+				<input type="text" name="issuingBody" class="form-control" required>
+			</div>
+		</div>
+
+		</form>
+
+
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+</script>
+
+
+<!-- *********************-->
+<!-- ***Experience Modal***-->
+<!-- *********************-->
+<script type="text/template" id="add-experience-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Add Experience</h3>
+    </div>
+    <div class="bbm-modal__section">
+
+    <form id="add-experience-form">
+    
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="role">Title</label>
+				<input type="text" name="role" class="form-control" required>
+			</div>				
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="company">Company Name</label>
+				<input type="text" name="company" class="form-control" required>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="fromDate">Start Date</label>
+				<input name="fromDate" class="form-control date-input" id="fromDate" required data-date-format="yyyy-mm-dd">
+			</div>								
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="toDate">End Date</label>
+				<input name="toDate" class="form-control date-input" id="toDate" required data-date-format="yyyy-mm-dd">
+			</div>				
+		</div>
+
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label for="responsibility">Summary</label>
+				<textarea rows="4" name="responsibility" class="form-control"></textarea>
+				<span id="chars">255</span> characters remaining
+			</div>
+		</div>
+	</form>
+
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+</script>
+
+<!-- *********************-->
+<!-- ***Education Modal***-->
+<!-- *********************-->
+
+<script type="text/template" id="add-education-modal">
+    <div class="bbm-modal__topbar">
+      <h3 class="bbm-modal__title">Edit Education</h3>
+    </div>
+    <div class="bbm-modal__section">
+    <form id="add-education-form">
+		<div class="col-sm-6">
+		<div class="form-group">
+			<label for="degree">Degree</label>
+				<select class="form-control" name="degree" required>
+					<option value="Bachelor Degree">Bachelor's Degree</option>
+					<option value="Master Degree">Master's Degree</option>
+					<option value="Doctoral's Degree">Doctoral's Degree</option>
+					<option value="Others">Others</option>
+				</select>
+			</div>
+		</div>
+			
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="field">Major</label>
+				<input type="text" name="field" class="form-control" required>
+			</div>				
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="fromDate">Start Date</label>
+				<input name="fromDate" class="form-control date-input" id="from-date" required data-date-format="yyyy-mm-dd">
+			</div>			
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="toDate">End Date</label>
+				<input name="toDate" class="form-control date-input" id="to-date" required data-date-format="yyyy-mm-dd">
+			</div>	
+		</div>
+		<div class="col-sm-12">
+			<div class="form-group">
+				<label for="school">School Name</label>
+				<input type="text" name="school" class="form-control" required>
+			</div>				
+		</div>
+
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="country">Country</label>
+				<select name="country" class="form-control select-country" required>
+					<option value="United States(USA)" selected="selected">United States(USA)</option>
+				</select>
+				<!-- <input type="text" name="country"  class="form-control" required> -->
+			</div>
+		</div>
+		
+		<div class="col-sm-6">
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" name="city"  class="form-control" required>
+			</div>
+		</div>
+
+	</form>
+	
+    </div>
+
+    <div class="bbm-modal__bottombar">
+      <button class="btn btn-default cancel">Close</button>
+      <button class="btn btn-blue save">Save</button>
+    </div>
+</script>

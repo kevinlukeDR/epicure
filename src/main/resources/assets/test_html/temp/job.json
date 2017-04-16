@@ -1,0 +1,6 @@
+[
+    {"id": 1, "position": "SeaDragon", "city": "Shenzhen", "subject": "English", "grade": "Gr.1", "jobType": "full=time", "classSize": 10, "contractLen": 12, "salary": 10000, "experience": 5, "comId": 1
+    },
+    {"id": 2, "position": "TeachOversea", "city": "Chengdu", "subject": "Music", "grade": "Gr.4", "jobType": "online", "classSize": 15, "contractLen": 11, "salary": 12000, "experience": 1, "comId": 2
+    }
+  ]

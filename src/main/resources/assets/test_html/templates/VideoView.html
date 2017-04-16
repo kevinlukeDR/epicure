@@ -1,0 +1,93 @@
+<div class="container mt-user">
+	<div class="row">
+		<div class="col-sm-9 col-xs-12">
+			<div class="content-panel">
+
+			<div class="row">
+				<h4 class="text-center fs-title">Upload a video to increase your chance to be seen!</h4>
+				
+				<div class="row text-center have">
+					<!-- <div class="col-xs-6">
+						<div class="video-button-container">
+							<span class="video-play play"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Play Video</span>
+						</div>
+					</div> -->
+
+					<div class="col-xs-12">
+						<div class="video-button-container">
+							<span class="video-play replace"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-xs">Replace Video</span></span>
+						</div>
+					</div>
+				</div>
+				<div class="video-container">
+						
+				</div>
+
+				<div class="row question-container">
+					<div class="col-sm-10 col-sm-offset-1 col-xs-12 mt10">
+						<h5>Please record a self-introduction video and specify the following information:</h5>
+						<ul>
+							<li>First name</li>
+							<li>Age</li>
+							<li>Highest level of education</li>
+							<li>ESL Certification</li>
+							<li>Years of teaching experience</li>
+							<li>Preferred teaching age</li>
+						</ul>
+						<h5>Additionally, please answer one of the following:</h5>
+						<select class="form-control" id="interview-questions">
+						</select>
+						<!-- <button class="btn btn-blue"></button> -->
+						<div class="row mt10">
+							<div class="col-sm-6 col-xs-12">
+							
+								<button class="btn btn-blue open-recording">Start recording</button>
+								<!-- <div class="box open-recording"><span></span></div> -->
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<!-- <span class="video-play">Upload local file</span> -->
+								<button class="btn btn-default" id="upload">Upload local file</button>
+							</div>
+
+						</div>
+						<div class="mt10 text-center white-panel hidden" id="upload-container">
+							<form id="upload-video-form" enctype="multipart/form-data">
+								<div class="form-inline">
+									<div class="form-group mr10">			
+									<label>Select a video file to upload <span class="text-muted">.mp4,.mov</span></label>
+									<input type="file" name="video" class="form-control-file"></div>
+									<button type="submit" class="btn btn-blue" id="submit-button">Submit</button>
+								</div>
+							</form>
+							<h4>Or drag and drop files below</h4>
+							<div class="upload-drop-zone" id="drop-zone">
+								Just drag and drop files here
+							</div>
+						</div>
+						
+
+						<!-- <button class='open-recording btn-blue'>Take Video</button> -->
+						<div class="recording-modal"></div>
+					</div>
+				</div>
+				
+			</div>
+			</div>
+		</div>
+
+		<div class="col-sm-3 col-xs-12">
+			<div class="content-panel">
+				<h4 class="text-center fs-title">Profile Strength</h4>
+        		
+				<div id="profile-strength">
+				</div>
+			</div>
+			<div class="alert alert-info" role="alert">
+				<h5 class="black-text">Why should I upload a video self introduction?</h5>
+				<p>Having a video introduction will help you stand out from the crowd and give employers more reasons to pay attention to your job application.</p>
+				<h5 class="black-text">Is my video private?</h5>
+				<p>Yes. Your information is not shared with anyone without your explicit consent. </p>
+			</div>
+		</div>
+	</div>
+</div>

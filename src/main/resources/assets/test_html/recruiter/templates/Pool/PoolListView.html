@@ -1,0 +1,44 @@
+
+<td><% var d = new Date(pagefour),
+fragments = [d.getMonth()+1,d.getDate(),d.getFullYear()];
+print(fragments.join('-')); %></td>
+<td><%= fname %></td>
+<td><%= mname %> <%= lname %></td>
+<td><%= email %></td>
+<td><%= skype %></td>
+<td><%= phone %></td>
+<td><%= gender %></td>
+<td><%= nationality %></td>
+<td><%= language %></td>
+<td><% print(2017-Number(birth))%></td>
+<td><%= major %></td>
+<td><%
+var d = new Date(graduateDate),
+fragments = [d.getMonth()+1,d.getDate(),d.getFullYear()];
+print(fragments.join('-'));%></td>
+<td><%= highestEdu %></td>
+<td><%= certification %>, <%= hours %> hours</td>
+<td><%= practicum %></td>
+<td><%= license %></td>
+<td><%= experience %></td>
+<td><%= ageGroup %></td>
+<td><%= subject %></td>
+<td><%= visa %></td>
+<td><%= salaryMin %></td>
+<td><%= salaryMax %></td>
+<td><%= location %></td>
+<td><%= family %></td>
+<td><%= spouse %></td>
+<td><%
+var d = new Date(availableDate),fragments = [
+d.getMonth()+1,
+d.getDate(),
+d.getFullYear()];
+print(fragments.join('-'));
+%></td>
+<td><% if (registerDate){ %>
+<% print ("Yes") %>
+<% }else { %>
+<% print ("No") %>
+<% } %>	
+</td>

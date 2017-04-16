@@ -1,0 +1,297 @@
+#main {
+  background-color: rgba(255, 255, 255, 0.9); }
+
+tr > td.recruiter-job-status {
+  text-transform: uppercase; }
+
+tr.success > td.recruiter-job-status {
+  color: #4CAF50; }
+
+tr.warning > td.recruiter-job-status {
+  color: #ed143d; }
+
+td.photo-cell {
+  width: 90px;
+  padding: 7px 10px; }
+
+img.candidate-img-sm {
+  width: 70px;
+  height: 70px; }
+
+td.result-header {
+  font-weight: 700;
+  font-size: 1.1em; }
+
+td.candidate-summary {
+  position: relative; }
+
+div.favp > i.fa-left {
+  position: absolute;
+  top: 12px;
+  left: 50px;
+  color: #EAEAEA; }
+  div.favp > i.fa-left:hover {
+    transform: scale(1.1); }
+  div.favp > i.fa-left.fav {
+    color: #fe7676; }
+
+td.recRate {
+  min-width: 110px; }
+
+.recruiter-fixed-button {
+  position: fixed;
+  bottom: 50px;
+  margin-bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030; }
+
+/***** Resume *****/
+img.candidate-img-md {
+  width: 100px;
+  height: 100px; }
+
+small.resume-date {
+  position: absolute;
+  right: 15px; }
+
+div.favp-modal > i.fa-modal {
+  position: absolute;
+  top: 25px;
+  left: 30px; }
+
+dt {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  padding: 0 26px 0 0;
+  width: 150px;
+  border-right: 1px solid #999; }
+
+dl {
+  display: table-row; }
+
+dl dt, dl dd {
+  display: table-cell;
+  padding-bottom: 20px; }
+
+dl dd {
+  width: 500px;
+  padding-left: 26px; }
+
+@media screen and (max-width: 1100px) {
+  div#resume h2 span {
+    position: static;
+    display: block;
+    margin-top: 2px; } }
+@media screen and (max-width: 550px) {
+  body {
+    margin: 1rem; }
+
+  div#resume img {
+    transform: rotate(0deg); } }
+/******* multistep forms ****/
+#job-post {
+  width: 710px;
+  text-align: center;
+  position: relative; }
+
+#job-post fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute; }
+
+/* Hide other fieldset */
+#job-post fieldset:not(:first-of-type) {
+  display: none; }
+
+h4.fs-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #2C3E50;
+  margin-bottom: 10px; }
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  counter-reset: step; }
+
+#progressbar li {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 25%;
+  float: left;
+  color: #2186C4;
+  position: relative; }
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  display: block;
+  color: #FFF6E5;
+  background: #FF7F66;
+  border-radius: 3px;
+  margin: 0 auto 5px auto; }
+
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #2186C4; }
+
+/*Progressbar connectoers*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #FF7F66;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; }
+
+#progressbar li:first-child:after {
+  content: none; }
+
+/******* Side bar ********/
+.wrapper, .row {
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0; }
+
+.wrapper:before, .wrapper:after,
+.column:before, .column:after {
+  content: "";
+  display: table; }
+
+.wrapper:after,
+.column:after {
+  clear: both; }
+
+#sidebar {
+  background-color: #4A5B7D;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+  min-height: 100%; }
+
+#sidebar .collapse.in {
+  display: inline; }
+
+#sidebar > .nav > li > a {
+  white-space: nowrap;
+  overflow: hidden; }
+
+#sidebar > .nav > li.active {
+  background-color: #435271; }
+
+ul.sidebar-menu > li:last-child > a,
+ul.sidebar-menu > li.last > a {
+  border-bottom-color: transparent !important; }
+
+#main {
+  padding: 10px;
+  left: 0;
+  overflow: scroll;
+  height: 100%; }
+
+/*
+ * off canvas sidebar
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  #sidebar {
+    min-width: 44px; }
+
+  #main {
+    width: 87%;
+    left: 0; }
+
+  #sidebar .visible-xs {
+    display: inline !important; }
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out; }
+
+  .row-offcanvas-left.active {
+    left: 45%; }
+
+  .row-offcanvas-left.active .sidebar-offcanvas {
+    left: -45%;
+    position: absolute;
+    top: 0;
+    width: 45%; } }
+@media screen and (min-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out; }
+
+  .row-offcanvas-left.active {
+    left: 3%; }
+
+  .row-offcanvas-left.active .sidebar-offcanvas {
+    left: -3%;
+    position: absolute;
+    top: 0;
+    width: 3%;
+    text-align: center;
+    min-width: 42px; }
+
+  #main {
+    left: 0; } }
+/****** input  for tags *******/
+.tt-input,
+.tt-hint {
+  width: 256px;
+  height: 28px;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none; }
+
+.tt-input {
+  /* UPDATE: newer versions use tt-input instead of tt-query */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.tt-hint {
+  color: #999; }
+
+.tt-menu {
+  /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
+  width: 300px;
+  margin-top: 12px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 20px; }
+
+.tt-suggestion.tt-is-under-cursor {
+  /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
+  color: #fff;
+  background-color: #0097cf; }
+
+.tt-suggestion p {
+  margin: 0; }
+
+/*# sourceMappingURL=recruiter.css.map */

@@ -1,0 +1,5 @@
+<ul>
+  <% _.each(activities, function(activity){ %>
+   <li><a href='<%= activity.get("url") %>'><%= activity.get("title") %></a></li> 
+  <% }); %>
+</ul>

@@ -1,0 +1,87 @@
+<div class="searchresult" data-position="<%= position %>" data-city="<%= city %>" data-subject="<%= subject %>" data-grade="<%= grade %>" data-jobType="<%= jobType %>" data-schoolType="<%= schoolType %>" data-classSize="<%= classSize %>">
+	<div class="row">
+		<div class="col-lg-1 col-md-2 hidden-sm hidden-xs text-center">
+		<% if(Recruiter.logo){ %>
+			<img src="https://s3.us-east-2.amazonaws.com/esl-public/<%= Recruiter.logo.path %>" class="result-logo-img img-responsive" alt="recruiter-logo">
+		<% }else{ %>
+			<img src="img/nologo.jpg" class="result-logo-img img-responsive" alt="recruiter-logo">
+		<% } %>
+			
+			
+		</div>
+
+		<div class="col-lg-11 col-md-10 col-xs-12">
+			<h3 class="position-title w80">
+				<a href="#jobs/<%= id %>"><%= position %></a>
+			</h3>
+			<p>Start from <% var d = new Date(startDate),
+							fragments = [
+							d.getMonth()+1,
+							d.getDate(),
+							d.getFullYear()
+							];
+							print(fragments.join('-'));
+						 %>   
+				<span class="text-muted">   Posted 
+				<% var d1 = new Date(postDate), d2 = new Date();
+					print(directory.diffInDays(d1,d2)); %> 
+			 days ago</span>		 
+						 	
+
+						 </p>
+			
+			 
+			<div class="row">
+				<div class="col-lg-8 col-sm-9 col-xs-9 search-result-summary">
+
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<p><i class="fa fa-map-pin" aria-hidden="true"></i><strong>Location: </strong><%= city %></p>
+						<p><i class="fa fa-book" aria-hidden="true"></i><strong>Subject: </strong><%= subject %></p>
+					</div>
+
+					<div class="col-md-6 col-sm-12 hidden-xs">
+						<p><i class="fa fa-graduation-cap" aria-hidden="true"></i><strong>Student Type: </strong><%
+						switch(grade){
+							case('0-6'):
+								print('Pre-K+');
+								break;
+							case('7-12'):
+								print('Elementary School');
+								break;
+							case('13-15'):
+								print('Middle School');
+								break;
+							case('16-18'):
+								print('High School');
+								break;
+						 	case('Higher'):
+								print('Higher-Ed');
+								break;
+							case('Professional'):
+								print('Business Professional');
+								break;
+							case('All Age under 18'):
+								print('All Age under 18');
+								break;
+							case('Not Specified'):
+								print('Not Specified');
+								break;
+						}
+						%></p>
+
+						<p><i class="fa fa-building" aria-hidden="true"></i><strong>School Type: </strong><%= schoolType %></p>
+					</div>
+					
+				</div>
+				<div class="col-lg-4 col-sm-3 col-xs-3">
+					<!-- <button id="applyButton" type="submit" class="btn btn-default btn-pink">Apply now</button> -->
+					<input type="hidden" name="job_id" value="<%= id %>">
+					<br><a href="#jobs/<%= id %>" target="_blank" class="mt4">View Details</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>

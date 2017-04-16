@@ -1,0 +1,17 @@
+<td class="table-position"><a href="#published/<%= id %>"><%= position %></a></td>
+<td><% var d = new Date(postDate),
+fragments = [d.getMonth()+1,d.getDate(),d.getFullYear()];
+print(fragments.join('-')); %></td>
+<td><%= city %></td>
+<td class="candidate-num">
+	<p><a class="blue-text"><%= appliedNum %></a> Applied</p>
+	<p><a class="blue-text"><%= recommendNum %></a> Recommend</p>
+	<p><a class="blue-text"><%= purchasedNum %></a> Purchased</p>
+</td>
+<td>
+	<div class="btn-group" role="group" aria-label="...">
+		<button type="button" class="btn btn-blue" id="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> EDIT</button>
+		<button type="button" class="btn btn-default" id="duplicate"><i class="fa fa-share" aria-hidden="true"></i> DUPLICATE</button>
+		<button type="button" class="btn btn-default" id="close"><i class="fa fa-times" aria-hidden="true"></i> CLOSE</button>
+	</div>
+</td>
