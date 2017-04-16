@@ -1,0 +1,252 @@
+template: Hello, %s!
+defaultName: Stranger
+
+#uploadFileLocation: ./src/main/resources/doc/resumes
+#
+#uploadForRecruiter: ./src/main/resources/doc/recruiter
+
+jobDefaultPic: SchoolPictures/locations-coming-soon.jpg
+
+avatarDefaultPic: ProfilePicture/3ca45b94-d0e8-4f60-ad1c-d021531b5e78avatar.png
+
+#Caching of authentication
+authenticationCachePolicy: maximumSize=10000, expireAfterAccess=10m
+
+publicbucketName: esl-public
+
+privatebucketName: esl-private
+
+privatevideobucketName: esl-private-video
+
+sessionExpireTime: 30
+
+accessKey: AKIAJPDK3B7PDD5X34UQ
+
+secretKey: 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
+
+database:
+  driverClass: com.mysql.jdbc.Driver
+  user: root
+  password: 123456
+  url: jdbc:mysql://localhost/teachoversea_v2?zeroDateTimeBehavior=convertToNull
+
+contactemail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  replyto: recruiter@teachoversea.com
+  subject: Contact Email
+  template: test.html
+
+applyconfirmemail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  replyto: recruiter@teachoversea.com
+  subject: Job Application Confirm Email
+  template: applyconfirm.html
+
+registrationemail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  replyto: recruiter@teachoversea.com
+  subject: Welcome to TeachOversea!
+  template: applyconfirm.html
+
+forgetpasswordemail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  replyto: recruiter@teachoversea.com
+  subject: Reset your password
+  template: applyconfirm.html
+
+contactUsEmail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  #This is actually an account we can receive the contact email
+  replyto: awycoff@teachoversea.com
+  subject: Contact Us Message
+  template: ContactUs.html
+
+applicationEmail:
+  account: no_reply@teachoversea.com
+  password: AeS.Com@@..~
+  replyto: recruiter@teachoversea.com
+  subject: Your application has been received!
+  template: applicationEmail.html
+
+qualifiedEmail:
+  account: awycoff@teachoversea.com
+  password: DePompolo1!
+  replyto: recruiter@teachoversea.com
+  subject: Hi FNAME, congrats! We'd like to invite you to an interview.
+  template: qualifiedCandidates.html
+
+unqualifiedEmail:
+  account: awycoff@teachoversea.com
+  password: DePompolo1!
+  replyto: recruiter@teachoversea.com
+  subject: Hi FNAME, thanks for submitting your application!
+  template: unqualifiedCandidates.html
+#logging:
+#  appenders:
+#    - type: console
+#      threshold: INFO
+#      target: stderr
+
+logging:
+
+  appenders:
+      - type: file
+        # The file to which current statements will be logged.
+        threshold: INFO
+        currentLogFilename: ./logs/log.log
+
+        # When the log file rotates, the archived log will be renamed to this and gzipped. The
+        # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+        # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+        archive: true
+        archivedLogFilenamePattern: ./logs/log-%d.log.zip
+
+        # The number of archived files to keep.
+        archivedFileCount: 5
+
+        # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+        timeZone: UTC
+
+      - type: file
+        # The file to which current statements will be logged.
+        threshold: ERROR
+        currentLogFilename: ./logs/error.log
+
+        # When the log file rotates, the archived log will be renamed to this and gzipped. The
+        # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+        # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+        archive: true
+        archivedLogFilenamePattern: ./logs/error-%d.log.zip
+
+        # The number of archived files to keep.
+        archivedFileCount: 5
+
+        # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+        timeZone: UTC
+      # Log warnings and errors to stderr
+      - type: console
+        threshold: INFO
+        target: stderr
+
+allowedGrantTypes:
+  - password
+
+bearerRealm: realm
+
+#server:
+#  applicationConnectors:
+#    - type: http
+#      port: 8080
+#      bindHost: 127.0.0.1 # only bind to loopback
+#      headerCacheSize: 512 bytes
+#      outputBufferSize: 32KiB
+#      maxRequestHeaderSize: 8KiB
+#      maxResponseHeaderSize: 8KiB
+#      inputBufferSize: 8KiB
+#      idleTimeout: 30 seconds
+#      minBufferPoolSize: 64 bytes
+#      bufferPoolIncrement: 1KiB
+#      maxBufferPoolSize: 64KiB
+#      acceptorThreads: 1
+#      selectorThreads: 2
+#      acceptQueueSize: 1024
+#      reuseAddress: true
+#      soLingerTime: 345s
+#      useServerHeader: false
+#      useDateHeader: true
+#      useForwardedHeaders: true
+#    - type: https
+#      port: 8443
+#      keyStorePath: /path/to/file
+#      keyStorePassword: changeit
+#      keyStoreType: JKS
+#      keyStoreProvider:
+#      trustStorePath: /path/to/file
+#      trustStorePassword: changeit
+#      trustStoreType: JKS
+#      trustStoreProvider:
+#      keyManagerPassword: changeit
+#      needClientAuth: false
+#      wantClientAuth:
+#      certAlias: <alias>
+#      crlPath: /path/to/file
+#      enableCRLDP: false
+#      enableOCSP: false
+#      maxCertPathLength: (unlimited)
+#      ocspResponderUrl: (none)
+#      jceProvider: (none)
+#      validateCerts: true
+#      validatePeers: true
+#      supportedProtocols: SSLv3
+#      excludedProtocols: (none)
+#      supportedCipherSuites: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+#      excludedCipherSuites: (none)
+#      allowRenegotiation: true
+#      endpointIdentificationAlgorithm: (none)
+#
+
+server:
+ #  softNofileLimit: 1000
+ #  hardNofileLimit: 1000
+   applicationConnectors:
+     - type: http
+       port: 8088
+     - type: https
+       port: 8443
+       keyStorePath: linkedBAC.keystore
+       keyStorePassword: 123456
+       validateCerts: false
+       validatePeers: false
+   adminConnectors:
+     - type: http
+       port: 8086
+     - type: https
+       port: 8444
+       keyStorePath: linkedBAC.keystore
+       keyStorePassword: 123456
+       validateCerts: false
+       validatePeers: false
+   requestLog:
+       appenders:
+         - type: console
+
+         - type: file
+           currentLogFilename: ./logs/request.log
+           threshold: ALL
+           archive: true
+           archivedLogFilenamePattern: ./logs/request-%d.log.zip
+           archivedFileCount: 5
+           timeZone: UTC
+           logFormat: # TODO
+
+flywayFactory:
+   # The encoding of SQL migrations. (default: UTF-8)
+   encoding: UTF-8
+   # The schemas managed by Flyway. (default: default schema of the connection)
+   #schemas: linkedBAC
+   # The fully qualified class names of the callbacks for lifecycle notifications. (default: empty list)
+   #callbacks:
+   # The name of the schema metadata table that will be used by Flyway. (default: schema_version)
+   #metaDataTableName: linkedBAC_version
+   # The file name prefix for sql migrations (default: V)
+   sqlMigrationPrefix: V
+   # The file name separator for sql migrations (default: __)
+   sqlMigrationSeparator: __
+   # The file name suffix for sql migrations (default: .sql)
+   sqlMigrationSuffix: .sql
+   # The prefix of every placeholder. (default: ${ )
+   #placeholderPrefix: ${
+   # The suffix of every placeholder. (default: } )
+   #placeholderSuffix: }
+   # The map of <placeholder, replacementValue> to apply to sql migration scripts. (default: empty map)
+   #placeholders:
+   # Locations to scan recursively for migrations. (default: db/migration)
+   #locations:
+   #  - /home/yiyujia/workingDir/jetbrain/linkbacREST/target/resources/flyway
+   # The fully qualified class names of the custom MigrationResolvers to be used in addition to the built-in ones for resolving Migrations to apply. (default: empty list)
+   #resolvers:
